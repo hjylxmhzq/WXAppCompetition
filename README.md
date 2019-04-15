@@ -1,0 +1,2 @@
+# WXAppCompetition
+None
