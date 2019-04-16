@@ -5,9 +5,35 @@
     "pages/remind/remind"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "某课程表",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#c82800",
+    "color": "#888",
+    "backgroundColor": "#ffeeee",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "",
+        "selectedIconPath": ""
+      },
+      {
+        "pagePath": "pages/class/class",
+        "text": "课程",
+        "iconPath": "",
+        "selectedIconPath": ""
+      },
+      {
+        "pagePath": "pages/remind/remind",
+        "text": "提醒",
+        "iconPath": "",
+        "selectedIconPath": ""
+      }
+    ]
   }
 }
