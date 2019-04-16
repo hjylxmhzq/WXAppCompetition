@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/class/class",
-    "pages/remind/remind"
+    "pages/remind/remind",
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -29,7 +30,7 @@
         "selectedIconPath": ""
       },
       {
-        "pagePath": "pages/remind/remind",
+        "pagePath": "pages/my/my",
         "text": "提醒",
         "iconPath": "",
         "selectedIconPath": ""

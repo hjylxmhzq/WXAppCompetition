@@ -14,7 +14,7 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: "api.godr.top",
+      url: "",
       data:{
         
       }
