@@ -9,7 +9,17 @@ App({
     // 登录
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          url: 'http://localhost:8000/login',
+          data: {
+            code: res.code
+          },
+          dataType: 'json',
+          success(res) {
+            wx.setStorageSync('session_id', res.data['session_id']);
+            console.log('get session_id success: '+wx.getStorageSync('session_id'))
+          }
+        })
       }
     })
     // 获取用户信息
