@@ -1,13 +1,23 @@
 <!--pages/index/index.wxml-->
-
-<view class="remind-cards">
-  <view wx:for="{{cardsArray}}" wx:key="" class="remind-card">
-
+<view class="container">
+  <view class="reminds">
+    <view class="card-title">临近提醒</view>
+    <view wx:for="{{remindArray}}" wx:key="" class="remind">
+      <view class="remind-title">{{item.title}}</view>
+      <view class="remind-time">{{item.time}}</view>
+      <view class="remind-time-left">{{item.timeLeft}}</view>
+      <view class="remind-text">{{item.text}}</view>
+    </view>
   </view>
-</view>
-
-<view class="today-classes">
-  <view wx:for="{{todayClassesArray}}" wx:key="" class="today-class">
-  
+  <view class="today-classes">
+    <view class="card-title">今日课程</view>
+    <view wx:for="{{todayClassesArray}}" wx:key="" class="class">
+      <view class="class-title">{{item.title}}</view>
+      <view class="class-info">
+        <text>{{item.time}}</text>
+        <text>{{item.place}}</text>
+      </view>
+      <view class="class-text">{{item.text}}</view>
+    </view>
   </view>
 </view>
