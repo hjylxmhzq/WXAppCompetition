@@ -10,7 +10,7 @@ App({
     wx.login({
       success: res => {
         wx.request({
-          url: 'http://localhost:8000/login',
+          url: 'http://tony-space.top:8005/login',
           data: {
             code: res.code
           },
