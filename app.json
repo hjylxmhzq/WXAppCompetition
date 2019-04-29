@@ -1,9 +1,9 @@
 {
   "pages": [
+        "pages/my/my",
     "pages/index/index",
     "pages/class/class",
-    "pages/remind/remind",
-    "pages/my/my"
+    "pages/remind/remind"
   ],
   "window": {
     "backgroundTextStyle": "dark",

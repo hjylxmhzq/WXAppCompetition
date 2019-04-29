@@ -1,1 +1,23 @@
 /* pages/my/my.wxss */
+
+.user-info {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.nickname {
+  font-size: 30rpx;
+  color: #777;
+  margin-top: 15rpx;
+}
