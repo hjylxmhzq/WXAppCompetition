@@ -1,0 +1,41 @@
+/* pages/my/settings/settings.wxss */
+
+.user-info {
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(-49deg, #fff 0%, #fff98f 0%, #fff21f 0%, #b4e68c 0%, #69daf8 0%, #07a4e2 28%, #0473f1 100%);
+}
+
+.avatar {
+  width: 130rpx;
+  height: 130rpx;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.nickname {
+  font-size: 30rpx;
+  color: #fff;
+  margin-top: 15rpx;
+}
+
+.settings {
+  margin-top: 20rpx;
+}
+
+.setting {
+  height: 90rpx;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px #d5d5d5 solid;
+  color: #505050;
+  font-size: 30rpx;
+}

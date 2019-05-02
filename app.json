@@ -1,20 +1,23 @@
 {
   "pages": [
-        "pages/my/my",
+    "pages/my/my",
     "pages/index/index",
     "pages/class/class",
-    "pages/remind/remind"
+    "pages/remind/remind",
+    "pages/my/settings/settings",
+    "pages/my/share/share",
+    "pages/my/about/about"
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#ffeeee",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "某课程表",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "selectedColor": "#c82800",
-    "color": "#888",
-    "backgroundColor": "#ffeeee",
+    "selectedColor": "#272727",
+    "color": "#777",
+    "backgroundColor": "#fff",
     "borderStyle": "white",
     "list": [
       {

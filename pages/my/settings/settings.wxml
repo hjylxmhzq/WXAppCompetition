@@ -1,0 +1,13 @@
+<!--pages/my/settings/settings.wxml-->
+
+<view class="user-info">
+  <open-data type="userAvatarUrl" class="avatar"></open-data>
+  <open-data type="userNickName" class="nickname"></open-data>
+</view>
+
+<view class="settings">
+  <view wx:for="{{settings}}" wx:key="" class="setting">
+    <text>{{item.text}}</text>
+    <switch checked="{{item.def}}"></switch>
+  </view>
+</view>
