@@ -4,3 +4,13 @@
   <open-data type="userAvatarUrl" class="avatar"></open-data>
   <open-data type="userNickName" class="nickname"></open-data>
 </view>
+
+<view class="settings">
+  <view wx:for="{{settings}}" wx:key="" class="setting">
+    <view>
+      <image mode="widthFix" src="{{item.icon}}" class="icon"></image>
+      <text>{{item.text}}</text>
+    </view>
+    <image mode="widthFix" src="/icon/arrow.png" class="arrow"></image>
+  </view>
+</view>

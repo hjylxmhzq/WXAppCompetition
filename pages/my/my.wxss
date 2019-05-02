@@ -2,22 +2,57 @@
 
 .user-info {
   width: 100%;
+  height: 400rpx;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(-49deg, #fff 0%, #fff98f 0%, #fff21f 0%, #b4e68c 0%, #69daf8 0%, #07a4e2 28%, #0473f1 100%);
 }
 
 .avatar {
-  display: block;
-  width: 200rpx;
-  height: 200rpx;
+  width: 130rpx;
+  height: 130rpx;
   overflow: hidden;
   border-radius: 50%;
 }
 
 .nickname {
   font-size: 30rpx;
-  color: #777;
+  color: #fff;
   margin-top: 15rpx;
+}
+
+.settings {
+  margin-top: 20rpx;
+}
+
+.setting {
+  height: 90rpx;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px #d5d5d5 solid;
+}
+
+.setting view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #505050;
+  font-size: 30rpx;
+}
+
+.icon {
+  width: 40rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+}
+
+.arrow {
+  margin-right: 20rpx;
+  right: 20rpx;
+  width: 25rpx;
 }

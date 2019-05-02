@@ -20,26 +20,26 @@
       {
         "pagePath": "pages/index/index",
         "text": "主页",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "/icon/main1b.png",
+        "selectedIconPath": "/icon/main1a.png"
       },
       {
         "pagePath": "pages/class/class",
         "text": "课程",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "/icon/main2b.png",
+        "selectedIconPath": "/icon/main2a.png"
       },
       {
         "pagePath": "pages/remind/remind",
         "text": "提醒",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "/icon/main3b.png",
+        "selectedIconPath": "/icon/main3a.png"
       },
       {
         "pagePath": "pages/my/my",
         "text": "我的",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "/icon/main4b.png",
+        "selectedIconPath": "/icon/main4a.png"
       }
     ]
   }
