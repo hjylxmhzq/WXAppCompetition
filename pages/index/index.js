@@ -5,6 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    mask: 'mask_off',
+    add_list: 'add_list_off',
+    addbutton: 'add',
     remindArray: [{
       title: "111",
       time: "2019.5.1",
@@ -49,7 +52,21 @@ Page({
       }
     });
   },
-
+  add(e) {
+    if (this.data.addbutton === 'add') {
+      this.setData({
+        addbutton: 'close',
+        add_list: 'add_list_on',
+        mask: 'mask_on'
+      });
+    } else {
+      this.setData({
+        mask: 'mask_off',
+        addbutton: 'add',
+        add_list: 'add_list_off'
+        });
+    }
+  },
   /**
    * 用户点击右上角分享
    */
