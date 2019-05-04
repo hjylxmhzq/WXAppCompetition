@@ -6,7 +6,8 @@
     "pages/remind/remind",
     "pages/my/settings/settings",
     "pages/my/share/share",
-    "pages/my/about/about"
+    "pages/my/about/about",
+    "pages/remind/addreminder/addreminder"
   ],
   "window": {
     "backgroundTextStyle": "dark",

@@ -67,6 +67,11 @@ Page({
         });
     }
   },
+  addreminder(e) {
+    wx.navigateTo({
+      url: '/pages/remind/addreminder/addreminder',
+    })
+  },
   /**
    * 用户点击右上角分享
    */
