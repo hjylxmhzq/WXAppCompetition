@@ -1,1 +1,67 @@
 /* pages/remind/remind.wxss */
+page {
+  background: #F3F3F3;
+}
+
+.line {
+  margin: 0 auto;
+  width: 550rpx;
+  height: 2rpx;
+  background-color: #d8d8d8;
+}
+
+.card {
+  width: 90%;
+  height: 330rpx;
+  margin: 20px auto;
+  border-radius: 20rpx;
+  color: white;
+  background-image: linear-gradient(145deg, #33f 0%, #fff 100%);
+}
+
+.card-title {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-title>text:nth-child(1) {
+  margin: 30rpx 0rpx 30rpx 50rpx;
+}
+
+.card-title>text:nth-child(3) {
+  margin: 30rpx 50rpx 30rpx 0;
+}
+
+.card-title>text:nth-child(2) {
+  margin: 30rpx 0rpx 30rpx 0;
+  width: 180rpx;
+}
+
+.card-title-secondary {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-title-secondary>view {
+  margin: 30rpx 0;
+}
+
+view>image {
+  height: 16px;
+  width: 16px;
+  vertical-align: -2px;
+  margin-right: 15rpx;
+}
+
+.card>view:nth-last-child(2) {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card>view:nth-last-child(1) {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
