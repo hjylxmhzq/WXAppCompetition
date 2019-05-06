@@ -7,13 +7,24 @@
   </view>
   <view class="line"></view>
   <view class="card-title-secondary">
-    <view><image src="/icon/course.png"></image>{{cardCourse}}</view>
-    <view><image src="/icon/time.png"></image>{{cardTime}}</view>
+    <view>
+      <image src="/icon/course.png"></image>{{cardCourse}}</view>
+    <view>
+      <image src="/icon/time.png"></image>{{cardTime}}</view>
   </view>
   <view>{{cardContent}}</view>
-  <view><image src="/icon/remark.png"></image>{{cardMark}}</view>
+  <view>
+    <image src="/icon/remark.png"></image>{{cardMark}}</view>
 </view>
 <view style="padding-left: 40rpx; font-size: 16px; color: #777;">近期提醒</view>
-<view wx:for="{{otherRemindArray}}">
-  <view></view>
+<view wx:for="{{otherRemindArray}}" wx:key="unique" class="secondary-card">
+  <view class="secondary-card-title">
+    <view>{{item.date}}</view>
+    <view>{{item.day}}</view>
+  </view>
+  <view class="line"></view>
+  <view>{{item.content}}</view>
+  <view><image src="/icon/course.png"></image>{{item.course}}</view>
+  <view><image src="/icon/time.png"></image>{{item.time}}</view>
+  <view><image src="/icon/remark.png"></image>{{item.mark}}</view>
 </view>

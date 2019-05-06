@@ -46,7 +46,7 @@ Page({
     }
 
     wx.request({
-      url: 'http://127.0.0.1:8005/addreminder',
+      url: 'http://tony-space.top:8005/addreminder',
       data,
       method: 'POST',
       header: {
