@@ -1,52 +1,33 @@
 <!--pages/remind/addreminder/addreminder.wxml-->
 <form bindsubmit='submitform' id="reminder-form" action='/addreminder' method="post">
-
   <view class="content-title">
-    <image src="/icon/bell.png" class="bell-img" />
+    <image src="/icon/bell.png" class="bell-img"></image>
     <text class="title-text">提醒内容</text>
   </view>
   <textarea name="content" placeholder='如：读书报告' class="content-input" name="reminder-content"></textarea>
   <view class="content-title">
-    <image src="/icon/add.png" class="cancel-img" />
+    <image src="/icon/add.png" class="cancel-img"></image>
     <text class="cancel-mark-text">取消 / </text>
-    <image src="/icon/add.png" class="add-img" />
+    <image src="/icon/add.png" class="add-img"></image>
     <text class="add-mark-text">添加备注</text>
   </view>
   <textarea name="mark" placeholder='如：记得提交纸质版' class="content-input" name="reminder-mark"></textarea>
   <view class="content-seg"></view>
   <picker class="picker" bindchange="bindPickerChange" value="{{courseIndex}}" range="{{courseArray}}">
-    <view class="picker-itemleft">
-      课程选择
-    </view>
-    <view class="picker-itemright">
-      {{courseArray[courseIndex]}}
-    </view>
+    <view class="picker-itemleft">课程选择</view>
+    <view class="picker-itemright">{{courseArray[courseIndex]}}</view>
   </picker>
   <picker class="picker" mode="date" value="{{date}}" start="2015-09-01" end="2030-12-01" bindchange="bindDateChange">
-    <view class="picker-itemleft">
-      日期
-    </view>
-    <view class="picker-itemright">
-      {{date}}
-    </view>
+    <view class="picker-itemleft">日期</view>
+    <view class="picker-itemright">{{date}}</view>
   </picker>
   <picker class="picker" mode="time" value="{{time}}" bindchange="bindTimeChange">
-    <view class="picker-itemleft">
-      时间
-    </view>
-    <view class="picker-itemright">
-      {{time}}
-    </view>
+    <view class="picker-itemleft">时间</view>
+    <view class="picker-itemright">{{time}}</view>
   </picker>
   <picker class="picker" bindchange="bindWayPickerChange" value="{{inwayIndex}}" range="{{inwayArray}}">
-    <view class="picker-itemleft">
-      提醒方式
-    </view>
-    <view class="picker-itemright">
-      {{inwayArray[inwayIndex]}}
-    </view>
+    <view class="picker-itemleft">提醒方式</view>
+    <view class="picker-itemright">{{inwayArray[inwayIndex]}}</view>
   </picker>
-  <button form-type="submit" type="primary" class="submit-button">
-    OK
-  </button>
+  <button form-type="submit" type="primary" class="submit-button">OK</button>
 </form>
