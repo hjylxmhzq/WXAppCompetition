@@ -1,1 +1,58 @@
 /* pages/class/class.wxss */
+
+.number {
+  width: 8%;
+  margin-left: 3%;
+  vertical-align: top;
+}
+
+.number > view {
+  line-height: 125rpx;
+}
+
+.outerbox {
+  margin: 40rpx 0;
+  height: 250rpx;
+}
+
+.outerbox > view:nth-child(1) {
+  display: inline-block;
+  height: 250rpx;
+}
+
+.course_card {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: solid 1px;
+  width: 85%;
+  height: 250rpx;
+  border-radius: 20rpx;
+}
+
+.course_card > view {
+  text-align: center;
+}
+
+.course_card > view:nth-child(1) {
+  width: 100%;
+  padding-top: 20rpx;
+  padding-left: 80rpx;
+  text-align: left;
+}
+
+.course_duration {
+  width: 45%;
+}
+
+.course_teacher {
+  width: 45%;
+}
+
+.course_place {
+  width: 45%;
+}
+
+.course_mark {
+  width: 45%;
+}

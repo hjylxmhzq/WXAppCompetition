@@ -5,7 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    courseData: [
+      {
+        courseName: '高等数学',
+        fromClass: '1',
+        toClass: '2',
+        duration: '8:00至10:00',
+        teacher: '授课',
+        place: '逸夫楼404',
+        mark: '单周'
+      }, {
+        courseName: '高等数学',
+        fromClass: '3',
+        toClass: '4',
+        duration: '8:00至10:00',
+        teacher: '授课',
+        place: '逸夫楼404',
+        mark: '单周'
+      }
+    ]
   },
 
   /**
