@@ -13,7 +13,6 @@ Page({
       icon: "/icon/share.png",
       text: "分享",
       nav: "/pages/my/share/share"
-
     }, {
       icon: "/icon/about.png",
       text: "关于我们",

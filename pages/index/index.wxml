@@ -1,38 +1,38 @@
 <!--pages/index/index.wxml-->
 <view class="container">
-  <view class="{{mask}}"></view>
-  <view class="reminds">
-    <view class="card-title">临近提醒</view>
-    <view wx:for="{{remindArray}}" wx:key="" class="remind">
-      <view class="remind-title">{{item.title}}</view>
-      <view class="remind-time">{{item.time}}</view>
-      <view class="remind-time-left">{{item.timeLeft}}</view>
-      <view class="remind-text">{{item.text}}</view>
+  <view class="today-remind">
+    <view class="today-date">
+      <image mode="widthFix" src="/icon/calendar.png"></image>
+      <text>{{todayDate}}</text>
+      <text>今日提醒</text>
     </view>
+    <view class="line"></view>
+    <swiper indicator-dots="true" indicator-color="#ffffff33" indicator-active-color="#fff" autoplay="true" >
+      <swiper-item wx:for="{{remindArray}}">
+
+
+
+      </swiper-item>
+    </swiper>
   </view>
-  <view class="today-classes">
-    <view class="card-title">今日课程</view>
-    <view wx:for="{{todayClassesArray}}" wx:key="" class="class">
-      <view class="class-title">{{item.title}}</view>
-      <view class="class-info">
-        <text>{{item.time}}</text>
-        <text>{{item.place}}</text>
-      </view>
-      <view class="class-text">{{item.text}}</view>
+
+
+
+
+
+
+  <view class="add">
+    <icon type="clear" size="40" color="rgb(100,100,100)" bindtap='add' />
+  </view>
+  <view class="{{add_list}}">
+    <view class="add_item" bindtap="addreminder">
+      <image style="width: 30px; height: 30px; padding: 5px;" src="{{'/icon/add.png'}}"></image>
     </view>
-    <view class="{{addbutton}}">
-      <icon type="clear" size="40" color="rgb(100,100,100)" bindtap='add' />
+    <view class="add_item">
+      <image style="width: 30px; height: 30px; padding: 5px;" src="{{'/icon/change.png'}}"></image>
     </view>
-    <view class="{{add_list}}">
-      <view class="add_item" bindtap="addreminder" >
-        <image style="width: 30px; height: 30px; padding: 5px;" src="{{'/icon/add.png'}}"></image>
-      </view>
-      <view class="add_item" >
-        <image style="width: 30px; height: 30px; padding: 5px;" src="{{'/icon/change.png'}}"></image>
-      </view>
-      <view class="add_item" >
-        <image style="width: 30px; height: 30px; padding: 5px;" src="{{'/icon/trans.png'}}"></image>
-      </view>
+    <view class="add_item">
+      <image style="width: 30px; height: 30px; padding: 5px;" src="{{'/icon/trans.png'}}"></image>
     </view>
   </view>
 </view>

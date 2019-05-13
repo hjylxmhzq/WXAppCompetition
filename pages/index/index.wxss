@@ -1,64 +1,14 @@
 /* pages/index/index.wxss */
 
-.container {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-}
 
-.card-title {
-  text-align: center;
-  font-size: 30rpx;
-  color: #999;
-  margin-top: 20rpx;
-}
 
-.reminds, .today-classes {
-  width: 45%;
-  padding: 20rpx 10rpx;
-}
 
-.remind, .class {
-  margin: 20rpx auto;
-  background-color: #fffefe;
-  border-radius: 20rpx;
-  border: solid 1px #db755b;
-  box-shadow: 5rpx 7rpx 20rpx 0 #ffb19e;
-}
 
-.remind-title, .class-title {
-  font-size: 40rpx;
-  padding: 20rpx 40rpx 0;
-  color: #333;
-}
 
-.remind-time {
-  font-size: 26rpx;
-  padding: 10rpx 40rpx 0;
-  color: #777;
-}
 
-.class-info {
-  font-size: 30rpx;
-  padding: 20rpx 40rpx 80rpx;
-  color: #555;
-}
 
-.class-info :nth-child(1) {
-  padding-right: 40rpx;
-}
 
-.remind-time-left {
-  font-size: 48rpx;
-  padding: 20rpx 40rpx;
-  text-align: center;
-}
 
-.remind-text, .class-text {
-  font-size: 26rpx;
-  padding: 0 40rpx 20rpx;
-  color: #777;
-}
 
 .add {
   transition: all 0.5s;

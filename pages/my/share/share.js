@@ -61,6 +61,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: "某课程表",
+      path: "/pages/index/index?fromUserId=" + wx.getStorageSync('session_id'),
+    };
   }
 })

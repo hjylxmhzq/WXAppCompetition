@@ -7,7 +7,6 @@ Page({
   data: {
     mask: 'mask_off',
     add_list: 'add_list_off',
-    addbutton: 'add',
     remindArray: [{
       title: "111",
       time: "2019.5.1",

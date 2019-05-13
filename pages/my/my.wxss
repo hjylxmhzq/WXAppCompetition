@@ -18,7 +18,7 @@
 }
 
 .nickname {
-  font-size: 30rpx;
+  font-size: 18pt;
   color: #fff;
   margin-top: 15rpx;
 }
@@ -42,7 +42,7 @@
   justify-content: space-between;
   align-items: center;
   color: #505050;
-  font-size: 30rpx;
+  font-size: 17pt;
 }
 
 .icon {
