@@ -5,6 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    addbutton: 'add',
+    mask: 'mask_off',
+    add_list: 'add_list_off',
     courseData: [
       {
         courseName: '高等数学',
@@ -25,7 +28,26 @@ Page({
       }
     ]
   },
-
+  add(e) {
+    if (this.data.addbutton === 'add') {
+      this.setData({
+        addbutton: 'close',
+        add_list: 'add_list_on',
+        mask: 'mask_on'
+      });
+    } else {
+      this.setData({
+        mask: 'mask_off',
+        addbutton: 'add',
+        add_list: 'add_list_off'
+      });
+    }
+  }, 
+  addclass(e) {
+    wx.navigateTo({
+      url: '/pages/class/addclass/addclass',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

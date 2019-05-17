@@ -1,0 +1,95 @@
+/* pages/remind/addreminder/addreminder.wxss */
+
+.content-title {
+  height: 35px;
+  background-color: #eee;
+}
+
+.content-seg {
+  height: 20px;
+  background-color: #eee;
+}
+
+.bell-img {
+  height: 15px;
+  width: 15px;
+  margin: 4px 5px 0 20px;
+  vertical-align: middle;
+  position: absolute;
+}
+
+.add-img {
+  height: 15px;
+  width: 15px;
+  margin: 5px 5px 0 80px;
+  vertical-align: middle;
+  position: absolute;
+
+}
+
+.cancel-img {
+  height: 15px;
+  width: 15px;
+  margin: 5px 5px 0 20px;
+  vertical-align: middle;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.content-input {
+  padding: 10px;
+  height: 30px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.title-text {
+  font-size: 13px;
+  padding: 10px 0 0 40px;
+  display: block;
+  height: 25px;
+  background-image: url(http://tony-space.top/static/icon/course.png);
+  background-size: 15px 15px;
+  background-position: 15px 11px;
+  background-repeat: no-repeat;
+}
+
+.cancel-mark-text {
+  font-size: 13px;
+  margin: 3px 0 0 40px;
+  vertical-align: middle;
+  position: absolute;
+}
+
+.add-mark-text {
+  font-size: 13px;
+  margin: 3px 0 0 100px;
+  vertical-align: middle;
+  position: absolute;
+}
+
+.picker {
+  font-size:14px;
+  padding:15px;
+  height:14px;
+}
+
+.picker-itemleft {
+  position: absolute;
+  left: 0px;
+  padding-left: 20px;
+  width: 100%;
+}
+
+.picker-itemright {
+  position: absolute;
+  right: 0px;
+  padding-right: 20px;
+}
+
+.submit-button {
+  width: 90%;
+  left: 5%;
+  position: absolute;
+  bottom: 15px;
+}

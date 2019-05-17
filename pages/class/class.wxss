@@ -1,4 +1,14 @@
 /* pages/class/class.wxss */
+page {
+  background-color: #ccc;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  position: relative;
+  height: 750rpx;
+}
 
 .number {
   width: 8%;
@@ -13,6 +23,7 @@
 .outerbox {
   margin: 40rpx 0;
   height: 250rpx;
+  font-size: 18px;
 }
 
 .outerbox > view:nth-child(1) {
@@ -24,14 +35,21 @@
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  border: solid 1px;
+  background: #eee;
   width: 85%;
   height: 250rpx;
   border-radius: 20rpx;
+  box-shadow: 0 0 5px 0 #fff;
 }
 
 .course_card > view {
-  text-align: center;
+  width: 220rpx;
+  text-align: left;
+  padding-left: 50rpx;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: 4px 3px;
+  overflow: hidden;
 }
 
 .course_card > view:nth-child(1) {
@@ -42,17 +60,95 @@
 }
 
 .course_duration {
-  width: 45%;
+  background-image: url(http://tony-space.top/static/icon/time_blue.png);
+
 }
 
 .course_teacher {
-  width: 45%;
+  background-image: url(http://tony-space.top/static/icon/lecturer.png);
 }
 
 .course_place {
-  width: 45%;
+  background-image: url(http://tony-space.top/static/icon/locale.png);
 }
 
 .course_mark {
-  width: 45%;
+  background-image: url(http://tony-space.top/static/icon/subject.png);
+}
+
+.add {
+  transition: all 0.5s;
+  height: 40px;
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  transform: rotate(45deg);
+}
+
+.close {
+  transition: all 0.5s;
+  height: 40px;
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+}
+
+.add_list_on {
+  transition: all 0.5s;
+  pointer-events: auto;
+  opacity: 1;
+  position: fixed;
+  bottom: 80px;
+  right: 15px;
+}
+
+.add_list_off {
+  transition: all 0.5s;
+  position: fixed;
+  opacity: 0;
+  bottom: 30px;
+  right: 15px;
+  pointer-events: none;
+}
+
+.add_item {
+  background-color: rgb(218, 205, 235);
+  border-radius: 50%; 
+  margin-bottom: 5px;
+  height: 40px;
+  width: 40px;
+  background-size: 30px 30px;
+  background-position: 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.add_item:nth-child(1) {
+  background-image: url(http://tony-space.top/static/icon/add.png);
+}
+.add_item:nth-child(2) {
+  background-image: url(http://tony-space.top/static/icon/change.png);
+}
+.add_item:nth-child(3) {
+  background-image: url(http://tony-space.top/static/icon/trans.png);
+}
+
+.mask_on {
+  transition: all 0.5s;
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  background-color: #777;
+  top: 0;
+}
+
+.mask_off {
+  transition: all 0.5s;
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  top: 0;
 }

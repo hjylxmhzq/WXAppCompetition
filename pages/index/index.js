@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    addbutton: 'add',
     mask: 'mask_off',
     add_list: 'add_list_off',
     remindArray: [{

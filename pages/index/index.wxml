@@ -21,18 +21,15 @@
 
 
 
-  <view class="add">
+  <view class="{{addbutton}}">
     <icon type="clear" size="40" color="rgb(100,100,100)" bindtap='add' />
   </view>
   <view class="{{add_list}}">
     <view class="add_item" bindtap="addreminder">
-      <image style="width: 30px; height: 30px; padding: 5px;" src="{{'/icon/add.png'}}"></image>
     </view>
     <view class="add_item">
-      <image style="width: 30px; height: 30px; padding: 5px;" src="{{'/icon/change.png'}}"></image>
     </view>
     <view class="add_item">
-      <image style="width: 30px; height: 30px; padding: 5px;" src="{{'/icon/trans.png'}}"></image>
     </view>
   </view>
 </view>
