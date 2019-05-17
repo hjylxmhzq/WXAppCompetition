@@ -7,28 +7,28 @@ Page({
   data: {
     addbutton: 'add',
     mask: 'mask_off',
+    addbutton: 'add',
     add_list: 'add_list_off',
-    remindArray: [{
+    todayDate: "1月1日 星期一",
+    remindList: [{
       title: "111",
       time: "2019.5.1",
-      timeLeft: "30min",
-      text: "1111111111111111"
+      remark: "1111111111111111"
     }, {
       title: "222",
       time: "2019.5.2",
-      timeLeft: "30min",
-      text: "2222222222222222"
+      remark: "2222222222222222",
+      courseName: "课程1"
     }],
-    todayClassesArray: [{
-      title: "课程1",
+    todayClassesList: [{
+      name: "课程1",
       time: "3、4节",
-      place: "1104",
-      text: "???"
+      place: "1104"
     }, {
-      title: "课程2",
+      name: "课程2",
       time: "7、8节",
       place: "4203",
-      text: "???"
+      remark: "???"
     }]
   },
 
@@ -64,7 +64,7 @@ Page({
         mask: 'mask_off',
         addbutton: 'add',
         add_list: 'add_list_off'
-        });
+      });
     }
   },
   addreminder(e) {

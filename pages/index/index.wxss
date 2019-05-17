@@ -1,14 +1,139 @@
 /* pages/index/index.wxss */
 
+page {
+  background-color: #ececec;
+}
 
+.today-remind {
+  height: 450rpx;
+  background-image: linear-gradient(0deg, #fff 0%, #fff98f 0%, #fff21f 0%, #b4e68c 0%, #69daf8 0%, #07a4e2 36%, #0473f1 100%);
+  display: flex;
+  flex-flow: column nowrap;
+  color: #fff;
+}
 
+.today-date {
+  margin: 0 auto;
+  padding: 40rpx 0 20rpx;
+  font-size: 35rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.today-date image, .class-info image {
+  width: 35rpx;
+  margin-right: 10rpx;
+}
 
+.today-date text:nth-child(2) {
+  margin-right: 40rpx;
+}
 
+.line {
+  width: 80%;
+  height: 1px;
+  margin: 0 auto;
+  border-bottom: 1px solid #fff;
+}
 
+swiper {
+  flex-grow: 1;
+}
 
+swiper-item>view view {
+  display: flex;
+  align-items: center;
+}
 
+swiper-item>view image {
+  width: 30rpx;
+  margin-right: 10rpx;
+}
 
+swiper-item>view:nth-child(1) {
+  width: 70%;
+  margin: 40rpx auto;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+swiper-item>view:nth-child(2) {
+  font-size: 40rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+
+swiper-item>view:nth-child(3) {
+  font-size: 28rpx;
+  margin: 40rpx auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-remind {
+  font-size: 36rpx;
+  text-align: center;
+  color: #ffffff99;
+  margin-top: 100rpx;
+}
+
+.today-class-split {
+  font-size: 28rpx;
+  color: #959595;
+  margin: 20rpx 0 20rpx 110rpx;
+}
+
+.today-class {
+  background-color: #fff;
+  margin-bottom: 40rpx;
+  overflow: hidden;
+}
+
+.class-name {
+  width: 70%;
+  margin: 20rpx auto 10rpx;
+  font-size: 36rpx;
+}
+
+.class-name text {
+  position: relative;
+  z-index: 0;
+}
+
+.class-name text::before {
+  content: "";
+  width: calc(100% + 30rpx);
+  height: 20rpx;
+  display: block;
+  position: absolute;
+  top: 30rpx;
+  left: -10rpx;
+  background: #62d7f899;
+  border-radius: 10rpx;
+  z-index: -1;
+}
+
+.class-info {
+  width: 70%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 40rpx;
+}
+
+.class-info view {
+  width: 45%;
+  color: #959595;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
 
 .add {
   transition: all 0.5s;

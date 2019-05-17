@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/my/my",
     "pages/index/index",
     "pages/class/class",
     "pages/remind/remind",
+    "pages/my/my",
     "pages/my/settings/settings",
     "pages/my/share/share",
     "pages/my/about/about",
