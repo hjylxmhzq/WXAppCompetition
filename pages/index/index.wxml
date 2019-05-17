@@ -7,32 +7,70 @@
       <text>今日提醒</text>
     </view>
     <view class="line"></view>
-    <swiper indicator-dots="true" indicator-color="#ffffff33" indicator-active-color="#fff" autoplay="true" >
-      <swiper-item wx:for="{{remindArray}}">
-
-
-
+    <swiper wx:if="{{remindList.length}}" indicator-dots="true" indicator-color="#ffffff33" indicator-active-color="#fff" autoplay="true">
+      <swiper-item wx:for="{{remindList}}" wx:key="">
+        <view>
+          <view>
+            <image mode="widthFix" src="/icon/course.png"></image>
+            <text wx:if="{{item.courseName}}">{{item.courseName}}</text>
+            <text wx:else style="color:#ffffff99">未关联课程</text>
+          </view>
+          <view>
+            <image mode="widthFix" src="/icon/time.png"></image>
+            <text>{{item.time}}</text>
+          </view>
+        </view>
+        <view>{{item.title}}</view>
+        <view>
+          <image mode="widthFix" src="/icon/remark.png"></image>
+          <text>备注：{{item.remark}}</text>
+        </view>
       </swiper-item>
     </swiper>
+    <view wx:else class="no-remind" style="color:#ffffff99">今日暂无提醒</view>
+  </view>
+  <view class="today-class-split">在此查看今日课程</view>
+  <view wx:for="{{todayClassesList}}" wx:key="" class="today-class">
+    <view class="class-name">
+      <text>{{item.name}}</text>
+    </view>
+    <view class="class-info">
+      <view>
+        <image mode="widthFix" src="/icon/time_blue.png"></image>
+        <text>{{item.time}}</text>
+      </view>
+      <view>
+        <image mode="widthFix" src="/icon/lecturer.png"></image>
+        <text wx:if="{{item.lecturer}}">{{item.lecturer}}</text>
+        <text wx:else>未知教师</text>
+      </view>
+      <view>
+        <image mode="widthFix" src="/icon/place.png"></image>
+        <text>{{item.place}}</text>
+      </view>
+      <view>
+        <image mode="widthFix" src="/icon/remark_blue.png"></image>
+        <text wx:if="{{item.remark}}">{{item.remark}}</text>
+        <text wx:else>暂无备注</text>
+      </view>
+    </view>
   </view>
 
 
 
 
-
-
-  <view class="add">
-    <icon type="clear" size="40" color="rgb(100,100,100)" bindtap='add' />
+  <view class="{{addbutton}}">
+    <icon type="clear" size="40" color="rgb(100,100,100)" bindtap='add'></icon>
   </view>
   <view class="{{add_list}}">
     <view class="add_item" bindtap="addreminder">
-      <image style="width: 30px; height: 30px; padding: 5px;" src="{{'/icon/add.png'}}"></image>
+      <image style="width: 30px; height: 30px; padding: 5px;" src="/icon/add.png"></image>
     </view>
     <view class="add_item">
-      <image style="width: 30px; height: 30px; padding: 5px;" src="{{'/icon/change.png'}}"></image>
+      <image style="width: 30px; height: 30px; padding: 5px;" src="/icon/change.png"></image>
     </view>
     <view class="add_item">
-      <image style="width: 30px; height: 30px; padding: 5px;" src="{{'/icon/trans.png'}}"></image>
+      <image style="width: 30px; height: 30px; padding: 5px;" src="/icon/trans.png"></image>
     </view>
   </view>
 </view>
