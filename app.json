@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/remind/remind",
     "pages/index/index",
     "pages/class/class",
-    "pages/remind/remind",
     "pages/my/my",
     "pages/my/settings/settings",
     "pages/my/share/share",
@@ -13,7 +13,7 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "某课程表",
+    "navigationBarTitleText": "有个课程表",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
