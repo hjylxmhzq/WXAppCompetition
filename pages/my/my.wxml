@@ -1,10 +1,8 @@
 <!--pages/my/my.wxml-->
-
 <view class="user-info">
   <open-data type="userAvatarUrl" class="avatar"></open-data>
   <open-data type="userNickName" class="nickname"></open-data>
 </view>
-
 <view class="settings">
   <navigator wx:for="{{settings}}" wx:key="" class="setting" url="{{item.nav}}">
     <view>

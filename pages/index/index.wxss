@@ -171,8 +171,8 @@ swiper-item>view:nth-child(3) {
 }
 
 .add_item {
-  background-color: rgb(218, 205, 235);
-  border-radius: 50%; 
+  background-color: #dacdeb;
+  border-radius: 50%;
   margin-bottom: 5px;
   height: 40px;
   width: 40px;
@@ -182,11 +182,13 @@ swiper-item>view:nth-child(3) {
 }
 
 .add_item:nth-child(1) {
-  background-image: url(http://tony-space.top/static/icon/add.png);
+  background-image: url(http://tony-space.top/static/icon/add_white.png);
 }
+
 .add_item:nth-child(2) {
   background-image: url(http://tony-space.top/static/icon/change.png);
 }
+
 .add_item:nth-child(3) {
   background-image: url(http://tony-space.top/static/icon/trans.png);
 }
