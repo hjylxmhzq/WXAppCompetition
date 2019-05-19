@@ -39,7 +39,6 @@ page {
   width: 85%;
   height: 250rpx;
   border-radius: 20rpx;
-  box-shadow: 0 0 5px 0 #fff;
 }
 
 .course_card > view {
