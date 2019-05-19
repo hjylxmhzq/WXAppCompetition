@@ -39,7 +39,6 @@ page {
   width: 85%;
   height: 250rpx;
   border-radius: 20rpx;
-  box-shadow: 0 0 5px 0 #fff;
 }
 
 .course_card > view {
@@ -54,7 +53,7 @@ page {
 
 .course_card > view:nth-child(1) {
   width: 100%;
-  padding-top: 20rpx;
+  padding-top: 30rpx;
   padding-left: 80rpx;
   text-align: left;
 }
