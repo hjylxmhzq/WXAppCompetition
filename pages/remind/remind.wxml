@@ -1,45 +1,53 @@
 <!--pages/remind/remind.wxml-->
 <view class="card">
   <view class="card-title">
-    <text>{{cardDate}}</text>
-    <text>{{cardDay}}</text>
+    <view>
+      <image mode="widthFix" src="/icon/calendar.png"></image>
+      <text>{{cardDate}}</text>
+      <text>{{cardDay}}</text>
+    </view>
     <text>最近提醒</text>
   </view>
   <view class="line"></view>
   <view class="card-title-secondary">
     <view>
-      <image src="/icon/course.png"></image>
+      <image mode="widthFix" src="/icon/course.png"></image>
       <text>{{cardCourse}}</text>
     </view>
     <view>
-      <image src="/icon/time.png"></image>
+      <image mode="widthFix" src="/icon/time.png"></image>
       <text>{{cardTime}}</text>
     </view>
   </view>
   <view>{{cardContent}}</view>
-  <view>
-    <image src="/icon/remark.png"></image>
+  <view class="card-title-remark">
+    <image mode="widthFix" src="/icon/remark.png"></image>
     <text>{{cardMark}}</text>
   </view>
 </view>
-<view style="padding-left: 40rpx; font-size: 16px; color: #777;">近期提醒</view>
+<view class="near-remind-split">近期提醒</view>
 <view wx:for="{{otherRemindArray}}" wx:key="" class="secondary-card">
   <view class="secondary-card-title">
-    <view>{{item.date}}</view>
+    <view>
+      <image mode="widthFix" src="/icon/calendar_black.png"></image>
+      <view>{{item.date}}</view>
+    </view>
     <view>{{item.day}}</view>
   </view>
   <view class="line"></view>
   <view>{{item.content}}</view>
   <view>
-    <image src="/icon/course.png"></image>
-    <text>{{item.course}}</text>
+    <view>
+      <image mode="widthFix" src="/icon/coursename.png"></image>
+      <text>{{item.course}}</text>
+    </view>
+    <view>
+      <image mode="widthFix" src="/icon/time_black.png"></image>
+      <text>{{item.time}}</text>
+    </view>
   </view>
   <view>
-    <image src="/icon/time.png"></image>
-    <text>{{item.time}}</text>
-  </view>
-  <view>
-    <image src="/icon/remark.png"></image>
+    <image mode="widthFix" src="/icon/remark_black.png"></image>
     <text>{{item.mark}}</text>
   </view>
 </view>
