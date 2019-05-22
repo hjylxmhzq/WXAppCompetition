@@ -8,7 +8,8 @@
     "pages/my/share/share",
     "pages/my/about/about",
     "pages/remind/addreminder/addreminder",
-    "pages/class/addclass/addclass"
+    "pages/class/addclass/addclass",
+    "pages/class/classinweek/classinweek"
   ],
   "window": {
     "backgroundTextStyle": "dark",

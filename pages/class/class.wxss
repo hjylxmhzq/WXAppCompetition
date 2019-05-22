@@ -111,30 +111,105 @@ page {
 }
 
 .add_item {
+  position: relative;
   background-color: #dacdeb;
   border-radius: 50%; 
   margin-bottom: 5px;
   height: 40px;
   width: 40px;
-  background-size: 30px 30px;
-  background-position: 5px 5px;
+  background-size: 26px 26px;
+  background-position: 7px 7px;
   background-repeat: no-repeat;
 }
 
 .add_item:nth-child(1) {
   background-image: url(http://tony-space.top/static/icon/add_white.png);
 }
+.add_item:nth-child(1)::before {
+  content: '添加课程';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 90px;
+  height: 25px;
+  left: -100px;
+  top: 7px;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 5px;
+}
+.add_item:nth-child(1)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  left: -15px;
+  top: 15px;
+  transform: rotate(45deg);
+}
 .add_item:nth-child(2) {
   background-image: url(http://tony-space.top/static/icon/change.png);
 }
+.add_item:nth-child(2)::before {
+  content: '周/日切换';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 90px;
+  height: 25px;
+  left: -100px;
+  top: 7px;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 5px;
+}
+.add_item:nth-child(2)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  left: -15px;
+  top: 15px;
+  transform: rotate(45deg);
+}
 .add_item:nth-child(3) {
   background-image: url(http://tony-space.top/static/icon/trans.png);
+}
+.add_item:nth-child(3)::before {
+  content: '分享';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 50px;
+  height: 25px;
+  left: -60px;
+  top: 7px;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 5px;
+}
+.add_item:nth-child(3)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  left: -15px;
+  top: 15px;
+  transform: rotate(45deg);
 }
 
 .mask_on {
   transition: all 0.5s;
   position: absolute;
-  pointer-events: none;
   opacity: 0.8;
   width: 100%;
   height: 100%;
@@ -150,4 +225,11 @@ page {
   height: 100%;
   opacity: 0;
   top: 0;
+}
+
+.noclass {
+  text-align: center;
+  font-size: 16px;
+  line-height: 100px;
+  color: #888;
 }

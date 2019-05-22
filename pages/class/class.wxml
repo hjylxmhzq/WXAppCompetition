@@ -1,6 +1,10 @@
 <!--pages/class/class.wxml-->
-<view class="{{mask}}"></view>
-
+<view class="{{mask}}" bindtap='add'></view>
+<view ex:if="{{courseData.length === 0}}">
+<view class="noclass">
+  今天暂无课程
+</view>
+</view>
 <view wx:for="{{courseData}}" wx:key="unique">
   <view class="outerbox">
     <view class="number">

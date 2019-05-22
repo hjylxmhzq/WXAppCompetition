@@ -1,0 +1,11 @@
+/* pages/class/classinweek/classinweek.wxss */
+
+.box {
+  display: grid;
+  grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
+}
+
+.cell {
+  border: 1px solid #eee;
+  height: 150rpx;
+}

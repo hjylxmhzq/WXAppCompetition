@@ -1,0 +1,9 @@
+<!--pages/class/classinweek/classinweek.wxml-->
+<view wx:for="{{}}" class="cell box">
+<view class="cell col0"></view>
+<view class="cell col1"></view>
+<view class="cell col2"></view>
+<view class="cell col3"></view>
+<view class="cell col4"></view>
+<view class="cell col5"></view>
+</view>

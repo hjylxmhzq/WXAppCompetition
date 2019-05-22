@@ -8,7 +8,7 @@ Page({
     addbutton: 'add',
     mask: 'mask_off',
     add_list: 'add_list_off',
-    courseData: [
+    courseData1: [
       {
         courseName: '高等数学',
         fromClass: '1',
@@ -26,7 +26,8 @@ Page({
         place: '逸夫楼404',
         mark: '单周'
       }
-    ]
+    ],
+    courseData: []
   },
   add(e) {
     if (this.data.addbutton === 'add') {

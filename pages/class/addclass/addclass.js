@@ -31,7 +31,6 @@ Page({
     }),
     courseIndex: 1,
     inwayIndex: 0,
-    inwayArray: ['微信']
   },
 
   chooseTime(e) {
@@ -68,7 +67,7 @@ Page({
           if (fromc >= toc) {
             selectedTime += (fromc + 1).toString() + '; ';
           } else {
-            selectedTime += (fromc + 1).toString() + '-' + (toc+1).toString() + '; ';
+            selectedTime += (fromc + 1).toString() + '-' + (toc + 1).toString() + '; ';
           }
         }
       } else {
@@ -86,7 +85,9 @@ Page({
     } else {
       selectedTime += '节';
     }
-    this.setData({ selectedTime })
+    this.setData({
+      selectedTime
+    })
   },
 
   comfirmWeek(e) {
@@ -111,17 +112,17 @@ Page({
         }
         if (i === week.length - 1) {
           if (fromc >= toc) {
-            selectedWeek += (fromc+1).toString() + '; ';
+            selectedWeek += (fromc + 1).toString() + '; ';
           } else {
-            selectedWeek += (fromc+1).toString() + '-' + toc.toString() + '; ';
+            selectedWeek += (fromc + 1).toString() + '-' + toc.toString() + '; ';
           }
         }
       } else {
         if (i !== 0 && week[i - 1].checked && someChecked) {
           if (fromc >= toc) {
-            selectedWeek += (fromc+1).toString() + '; ';
+            selectedWeek += (fromc + 1).toString() + '; ';
           } else {
-            selectedWeek += (fromc+1).toString() + '-' + (toc+1).toString() + '; ';
+            selectedWeek += (fromc + 1).toString() + '-' + (toc + 1).toString() + '; ';
           }
         }
       }
@@ -131,7 +132,9 @@ Page({
     } else {
       selectedWeek += '周';
     }
-    this.setData({selectedWeek})
+    this.setData({
+      selectedWeek
+    })
   },
 
   changeTime(e) {
@@ -178,16 +181,25 @@ Page({
 
   submitform(e) {
     let data = {
-      content: e.detail.value['reminder-content'],
+      course: e.detail.value['reminder-content'],
       mark: e.detail.value['reminder-mark'],
-      course: this.data.courseArray[this.data.courseIndex],
-      date: this.data.date,
-      time: this.data.time,
-      inway: this.data.courseArray[this.data.courseIndex]
+      place: e.detail.value['reminder-place'],
+      teacher: e.detail.value['reminder-teacher'],
+      time: this.data.selectedTime,
+      week: this.data.selectedWeek
+    }
+    if (this.data.selectedTime === '未选择时间' || this.data.selectedWeek === '未选择周数') {
+      wx.showToast({
+        title: "未选择时间/周数",
+        icon: 'none',
+        duration: 800,
+        mask: true
+      });
+      return;
     }
 
     wx.request({
-      url: 'http://tony-space.top:8005/addreminder',
+      url: 'http://127.0.0.1:8005/addclass',
       data,
       method: 'POST',
       header: {
@@ -197,7 +209,7 @@ Page({
       success: function(res, statusCode) {
         if (res.statusCode == 201) {
           wx.navigateTo({
-            url: '/pages/remind/remind',
+            url: '/pages/class/class',
           })
         } else {
           console.log('add reminder fail');

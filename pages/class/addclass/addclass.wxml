@@ -15,11 +15,11 @@
   <view class="content-title">
     <text class="place-text">地点</text>
   </view>
-  <input name="content" placeholder='如：高等数学' class="content-input" name="reminder-content"></input>
+  <input name="content" placeholder='如：教学楼' class="content-input" name="reminder-place"></input>
   <view class="content-title">
     <text class="lecturer-text">教师</text>
   </view>
-  <input name="content" placeholder='如：高等数学' class="content-input" name="reminder-content"></input>
+  <input name="content" placeholder='如：高等数学' class="content-input" name="reminder-teacher"></input>
   <button form-type="submit" type="primary" class="submit-button">OK</button>
   <view class="content-title"></view>
   <view class="class_choose_bar" bindtap='chooseTime'>
