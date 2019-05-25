@@ -1,11 +1,62 @@
 /* pages/class/classinweek/classinweek.wxss */
 
 .box {
-  display: grid;
-  grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
+  display: flex;
+  width: 100%;
 }
 
 .cell {
-  border: 1px solid #eee;
-  height: 150rpx;
+  border-bottom: 1px solid #eee;
+  flex-basis: 20%;
+}
+
+.col0 {
+  flex-shrink: 2;
+}
+
+.course {
+  border: 1px solid #ddd;
+  font-size: 14px;
+  padding: 25rpx;
+  height: 130rpx;
+  border-radius: 15rpx;
+  margin: 5rpx 2rpx;
+  text-align: center;
+}
+
+.course > view:first-child {
+  height: 80rpx;
+  margin-bottom: 10rpx;
+}
+
+.course > view:last-child {
+  font-size: 10px;
+  height: 40rpx;
+  color: #888;
+}
+
+.date {
+  text-align: center;
+  height: 75rpx;
+}
+
+.date > view:first-child {
+  font-size: 14px;
+}
+
+.date > view:last-child {
+  font-size: 12px;
+  color: #888;
+}
+
+.col0 > .course {
+  line-height: 130rpx;
+  border-radius: 0;
+  font-size: 16px;
+}
+
+.col0 > .date {
+  font-size: 14px;
+  color: #888;
+  line-height: 75rpx;
 }

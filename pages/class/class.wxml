@@ -1,6 +1,6 @@
 <!--pages/class/class.wxml-->
 <view class="{{mask}}" bindtap='add'></view>
-<view ex:if="{{courseData.length === 0}}">
+<view wx:if="{{courseData.length === 0}}">
 <view class="noclass">
   今天暂无课程
 </view>
@@ -40,7 +40,7 @@
 <view class="{{add_list}}">
   <view class="add_item" bindtap="addclass">
   </view>
-  <view class="add_item">
+  <view class="add_item" bindtap="changeMode">
   </view>
   <view class="add_item">
   </view>

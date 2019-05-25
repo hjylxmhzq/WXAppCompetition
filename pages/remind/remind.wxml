@@ -3,8 +3,8 @@
   <view class="card-title">
     <view>
       <image mode="widthFix" src="/icon/calendar.png"></image>
-      <text>{{cardDate}}</text>
-      <text>{{cardDay}}</text>
+      <text>{{firstRemind.date}}</text>
+      <text>{{firstRemind.day}}</text>
     </view>
     <text>最近提醒</text>
   </view>
@@ -12,17 +12,17 @@
   <view class="card-title-secondary">
     <view>
       <image mode="widthFix" src="/icon/course.png"></image>
-      <text>{{cardCourse}}</text>
+      <text>{{firstRemind.course}}</text>
     </view>
     <view>
       <image mode="widthFix" src="/icon/time.png"></image>
-      <text>{{cardTime}}</text>
+      <text>{{firstRemind.time}}</text>
     </view>
   </view>
-  <view>{{cardContent}}</view>
+  <view>{{firstRemind.content}}</view>
   <view class="card-title-remark">
     <image mode="widthFix" src="/icon/remark.png"></image>
-    <text>{{cardMark}}</text>
+    <text>{{firstRemind.mark}}</text>
   </view>
 </view>
 <view class="near-remind-split">近期提醒</view>

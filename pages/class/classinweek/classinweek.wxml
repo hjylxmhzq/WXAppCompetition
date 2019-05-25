@@ -1,9 +1,61 @@
 <!--pages/class/classinweek/classinweek.wxml-->
-<view wx:for="{{}}" class="cell box">
-<view class="cell col0"></view>
-<view class="cell col1"></view>
-<view class="cell col2"></view>
-<view class="cell col3"></view>
-<view class="cell col4"></view>
-<view class="cell col5"></view>
+<view class="box">
+  <view class="cell col0">
+    <view class="date">
+    第{{nowweek}}周
+    </view>
+    <view wx:for="{{classcount}}" wx:key="unique" class="course">
+    {{item}}
+    </view>
+  </view>
+  <view class="cell col1">
+    <view class="date">
+      <view>{{date[0]}}</view>
+      <view>周一</view>
+    </view>
+    <view wx:for="{{course[0]}}" wx:key="unique" class="course">
+      <view>{{item.name}}</view>
+      <view>{{item.place}}</view>
+    </view>
+  </view>
+  <view class="cell col2">
+    <view class="date">
+      <view>{{date[1]}}</view>
+      <view>周二</view>
+    </view>
+    <view wx:for="{{course[1]}}" wx:key="unique" class="course">
+      <view>{{item.name}}</view>
+      <view>{{item.place}}</view>
+    </view>
+  </view>
+  <view class="cell col3">
+    <view class="date">
+      <view>{{date[2]}}</view>
+      <view>周三</view>
+    </view>
+    <view wx:for="{{course[2]}}" wx:key="unique" class="course">
+      <view>{{item.name}}</view>
+      <view>{{item.place}}</view>
+    </view>
+  </view>
+  <view class="cell col4">
+    <view class="date">
+      <view>{{date[3]}}</view>
+      <view>周四</view>
+    </view>
+    <view wx:for="{{course[3]}}" wx:key="unique" class="course">
+      <view>{{item.name}}</view>
+      <view>{{item.place}}</view>
+    </view>
+  </view>
+  <view class="cell col5">
+    <view class="date">
+      <view>{{date[4]}}</view>
+      <view>周五</view>
+    </view>
+    <view wx:for="{{course[4]}}" wx:key="unique" class="course">
+      <view>{{item.name}}</view>
+      <view>{{item.place}}</view>
+    </view>
+  </view>
 </view>

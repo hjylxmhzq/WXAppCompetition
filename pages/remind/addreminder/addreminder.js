@@ -14,7 +14,7 @@ Page({
     ],
     courseIndex: 1,
     inwayIndex: 0,
-    inwayArray: ['微信']
+    inwayArray: ['微信','无']
   },
 
 
@@ -46,7 +46,7 @@ Page({
     }
 
     wx.request({
-      url: 'http://tony-space.top:8005/addreminder',
+      url: 'http://tony-space.top/wxapi/addreminder',
       data,
       method: 'POST',
       header: {

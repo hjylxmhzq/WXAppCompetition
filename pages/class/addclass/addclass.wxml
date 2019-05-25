@@ -26,6 +26,10 @@
     <view>上课时间</view>
     <view>{{selectedTime}}</view>
   </view>
+  <view class="class_choose_bar" bindtap='chooseDay'>
+    <view>上课星期</view>
+    <view>{{selectedDay}}</view>
+  </view>
   <view class="class_choose_bar" bindtap='chooseWeek'>
     <view>上课周数</view>
     <view>{{selectedWeek}}</view>
@@ -33,16 +37,25 @@
   <view wx:if="{{showClassChoose}}">
     <view class="class_time">
       <label class="radio" wx:for="{{classtime}}" wx:key="unique" wx:for-index="index">
-        <radio value="{{item.name}}" data-index="{{index}}"  checked="{{item.checked}}" bindtap='changeTime'/> {{item.name}}
+        <radio value="{{item.name}}" data-index="{{index}}" checked="{{item.checked}}" bindtap='changeTime' /> {{item.name}}
       </label>
       <button type="primary" class="comfirm-button" bindtap='comfirmTime'>OK</button>
+
+    </view>
+  </view>
+  <view wx:if="{{showDayChoose}}">
+    <view class="class_time">
+      <label class="radio" wx:for="{{daytime}}" wx:key="unique" wx:for-index="index">
+        <radio value="{{item.name}}" data-index="{{index}}" checked="{{item.checked}}" bindtap='changeDay' /> {{item.name}}
+      </label>
+      <button type="primary" class="comfirm-button" bindtap='comfirmDay'>OK</button>
 
     </view>
   </view>
   <view wx:if="{{showWeekChoose}}">
     <view class="class_time">
       <label class="radio" wx:for="{{week}}" wx:key="unique" wx:for-index="index">
-        <radio value="{{item.name}}" data-index="{{index}}" checked="{{item.checked}}" bindtap='changeWeek'/> {{item.name}}
+        <radio value="{{item.name}}" data-index="{{index}}" checked="{{item.checked}}" bindtap='changeWeek' /> {{item.name}}
       </label>
       <button type="primary" class="comfirm-button" bindtap='comfirmWeek'>OK</button>
 
