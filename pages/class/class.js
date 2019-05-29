@@ -113,7 +113,6 @@ Page({
             courseData.push(c);
           }
         });
-
         callback(courseData);
       }
     });
@@ -133,6 +132,10 @@ Page({
       });
     }
     this.getTodayCourses(today, nowweek, callback);
+  },
+
+  onPullDownRefresh: function() {
+    this.onLoad();
   },
 
   /**

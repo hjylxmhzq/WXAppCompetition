@@ -53,6 +53,5 @@
 
 .arrow {
   margin-right: 20rpx;
-  right: 20rpx;
   width: 25rpx;
 }

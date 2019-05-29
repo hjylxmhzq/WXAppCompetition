@@ -41,6 +41,11 @@
   font-size: 30rpx;
 }
 
-picker text{
+picker text {
   display: block;
+}
+
+.arrow {
+  margin-right: 20rpx;
+  width: 25rpx;
 }
