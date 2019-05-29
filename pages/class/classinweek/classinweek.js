@@ -86,6 +86,7 @@ Page({
             courseData.push(c);
           }
         })
+        console.log(courseData)
         callback(courseData);
       }
     })
