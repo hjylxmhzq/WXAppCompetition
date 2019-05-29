@@ -9,14 +9,7 @@ Page({
     addbutton: 'add',
     add_list: 'add_list_off',
     todayDate: "",
-    remindList: [{
-      date: '4月17日',
-      day: '星期四',
-      time: '9:00',
-      course: '高等数学',
-      content: '第四章随堂小测',
-      mark: '本章内容较多'
-    }],
+    remindList: [],
     todayClassesList: []
   },
 
@@ -118,7 +111,59 @@ Page({
       that.setData({
         todayClassesList: courseData
       });
-      console.log(this.data.todayClassesList);
+    });
+
+    wx.request({
+      url: 'http://tony-space.top/wxapi/getreminder',
+      dataType: 'json',
+      method: 'GET',
+      header: {
+        'Cookie': "app:sess=" + wx.getStorageSync("session_id")
+      },
+      success: function(res) {
+        let data = res.data;
+        data.sort(function(a, b) {
+          a = +new Date(a['remind_date'] + ' ' + a['remind_time']);
+          b = +new Date(b['remind_date'] + ' ' + b['remind_time']);
+          return a - b;
+        });
+        data = data.filter(function(item) {
+          let now = +new Date();
+          let thistime = +new Date(item['remind_date'] + ' ' + item['remind_time']);
+          if (thistime - now > 0) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+        let d = data.map(function(item) {
+          let daylist = ['一', '二', '三', '四', '五', '六', '日']
+          let day = daylist[(new Date(item['remind_date'] + ' ' + item['remind_time']).getDay() - 1)];
+          return {
+            date: item['remind_date'].split('-')[1] + '月' + item['remind_date'].split('-')[2] + '日',
+            day: '星期' + day,
+            remind_date: item['remind_date'],
+            time: item['remind_time'],
+            course: item['course'] || '未关联课程',
+            content: item['content'] || '暂无内容',
+            mark: item['mark'] || '暂无备忘',
+            uid: item['uniqueid']
+          }
+        });
+
+        let nowtime = new Date().getTime() / 1000;
+
+        that.setData({
+          remindList: d.filter(function(x) {
+            let t = new Date(x['remind_date'] + 'T' + x['time'] + ':00+08:00');
+            let subTime = t.getTime() / 1000 - nowtime;
+            return subTime > 0 && subTime < 3600 * 24 * 2;
+          })
+        });
+      },
+      fail: function() {
+        console.log('request reminder data fail');
+      }
     });
   },
 
@@ -143,6 +188,7 @@ Page({
       url: '/pages/remind/addreminder/addreminder',
     });
   },
+  
   /**
    * 用户点击右上角分享
    */

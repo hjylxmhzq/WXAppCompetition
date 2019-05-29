@@ -21,63 +21,24 @@ Page({
     });
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
   bindPickerChange: function(e) {
-
     this.setData({
       weekIndex: e.detail.value
     });
 
+    let data = {
+      nowweek: parseInt(e.detail.value) + 1
+    }
     wx.setStorageSync('nowweek', parseInt(e.detail.value) + 1);
     wx.request({
       url: 'http://tony-space.top/wxapi/setnowweek',
-      dataType: 'json',
+      data,
       method: 'POST',
       header: {
+        'content-Type': 'application/x-www-form-urlencoded',
         'Cookie': "app:sess=" + wx.getStorageSync("session_id")
       },
-      success: function (res) {
+      success: function(res) {
         console.log('set current week successfully')
       }
     })
@@ -89,7 +50,7 @@ Page({
    */
   onShareAppMessage: function() {
     return {
-      title: "某课程表",
+      title: "有个课程表",
       path: "/pages/index/index?fromUserId=" + wx.getStorageSync('session_id'),
     };
   }
