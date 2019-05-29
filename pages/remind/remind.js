@@ -38,12 +38,13 @@ Page({
     wx.request({
       url: 'http://tony-space.top/wxapi/getreminder',
       dataType: 'json',
-      method: 'POST',
+      method: 'GET',
       header: {
         'Cookie': "app:sess=" + wx.getStorageSync("session_id")
       },
       success: function(res) {
         let data = res.data;
+        console.log(data)
         data.sort(function(a,b) {
           a = +new Date(a['remind_date']+' '+a['remind_time']);
           b = +new Date(b['remind_date'] + ' ' + b['remind_time']);

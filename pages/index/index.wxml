@@ -1,4 +1,4 @@
-<!--pages/index/index.wxml-->
+<!-- pages/index/index.wxml -->
 <view class="container">
   <view class="today-remind">
     <view class="today-date">
@@ -32,25 +32,26 @@
   <view class="today-class-split">在此查看今日课程</view>
   <view wx:for="{{todayClassesList}}" wx:key="" class="today-class">
     <view class="class-name">
-      <text>{{item.name}}</text>
+      <text>{{item.courseName}}</text>
     </view>
     <view class="class-info">
       <view>
         <image mode="widthFix" src="/icon/time_blue.png"></image>
-        <text>{{item.time}}</text>
+        <text>{{item.duration}}</text>
       </view>
       <view>
         <image mode="widthFix" src="/icon/lecturer.png"></image>
-        <text wx:if="{{item.lecturer}}">{{item.lecturer}}</text>
+        <text wx:if="{{item.teacher}}">{{item.teacher}}</text>
         <text wx:else>未知教师</text>
       </view>
       <view>
         <image mode="widthFix" src="/icon/place.png"></image>
-        <text>{{item.place}}</text>
+        <text wx:if="{{item.place}}">{{item.place}}</text>
+        <text wx:else>未知地点</text>
       </view>
       <view>
         <image mode="widthFix" src="/icon/remark_blue.png"></image>
-        <text wx:if="{{item.remark}}">{{item.remark}}</text>
+        <text wx:if="{{item.mark}}">{{item.mark}}</text>
         <text wx:else>暂无备注</text>
       </view>
     </view>

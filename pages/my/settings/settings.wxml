@@ -10,4 +10,10 @@
     <text>{{item.text}}</text>
     <switch checked="{{item.def}}"></switch>
   </view>
+  <picker bindchange="bindPickerChange" value="{{weekIndex}}" range="{{weekArray}}">
+    <view class="setting">
+      <view>选择当前周数</view>
+      <view>第 {{weekArray[weekIndex]}} 周</view>
+    </view>
+    </picker>
 </view>

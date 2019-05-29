@@ -1,2 +1,4 @@
 <!--pages/my/about/about.wxml-->
-<text>pages/my/about/about.wxml</text>
+<image mode="widthFix" src="/icon/logo_black.png" class="icon"></image>
+<view class="text">来自万有引力团队</view>
+<image mode="widthFix" src="/icon/sth_wrong.png" class="pic"></image>

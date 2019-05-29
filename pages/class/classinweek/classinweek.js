@@ -21,6 +21,8 @@ Page({
       },
       success: function (res) {
         let data = res.data;
+        console.log(data);
+
 
         data = data.map(function (course) {
           let week = course['week'].split(';');
@@ -31,7 +33,7 @@ Page({
               singleweek.push(parseInt(w));
             } else {
               let f = parseInt(w.split('-')[0]);
-              let t = parseInt(w.split('-')[1]);
+              let t = w.split('-').length > 1 ? parseInt(w.split('-')[1]) : f;
               let len = t - f + 1;
               let tempweek = new Array(len);
               for (let i = 0; i < len; i++) {
@@ -51,7 +53,7 @@ Page({
               singleday.push(parseInt(w));
             } else {
               let f = parseInt(w.split('-')[0]);
-              let t = parseInt(w.split('-')[1]);
+              let t = w.split('-').length > 1 ? parseInt(w.split('-')[1]) : f;
               let len = t - f + 1;
               let tempday = new Array(len);
               for (let i = 0; i < len; i++) {
@@ -70,6 +72,7 @@ Page({
         let courseData = [];
         let classtotime = wx.getStorageSync('classtotime')
         console.log(data)
+
         data.forEach(function (course, index) {
           if (course['week'].indexOf(nowweek) !== -1) {
 

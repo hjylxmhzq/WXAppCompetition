@@ -1,1 +1,21 @@
 /* pages/my/about/about.wxss */
+
+image{
+  display: block;
+}
+
+.icon {
+  width: 200rpx;
+  margin: 100rpx auto 0;
+}
+
+.text {
+  font-size: 28rpx;
+  margin: 40rpx auto;
+  text-align: center;
+}
+
+.pic {
+  width: 500rpx;
+  margin: 0 auto;
+}

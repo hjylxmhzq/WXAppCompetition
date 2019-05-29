@@ -33,9 +33,14 @@
   margin: 0 auto;
   padding: 0 20rpx;
   display: flex;
+  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px #d5d5d5 solid;
   color: #505050;
   font-size: 30rpx;
+}
+
+picker text{
+  display: block;
 }
