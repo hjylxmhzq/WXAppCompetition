@@ -6,7 +6,7 @@
     <view class="today-date">
       <image mode="widthFix" src="/icon/calendar.png"></image>
       <text>{{todayDate}}</text>
-      <text>今日提醒</text>
+      <text>近期提醒</text>
     </view>
     <view class="line"></view>
     <swiper wx:if="{{remindList.length}}" indicator-dots="true" indicator-color="#ffffff33" indicator-active-color="#fff" autoplay="true">
@@ -14,7 +14,7 @@
         <view>
           <view>
             <image mode="widthFix" src="/icon/course.png"></image>
-            <text wx:if="{{item.courseName}}">{{item.courseName}}</text>
+            <text wx:if="{{item.course}}">{{item.course}}</text>
             <text wx:else style="color:#ffffff99">未关联课程</text>
           </view>
           <view>
@@ -22,14 +22,14 @@
             <text>{{item.time}}</text>
           </view>
         </view>
-        <view>{{item.title}}</view>
+        <view>{{item.content}}</view>
         <view>
           <image mode="widthFix" src="/icon/remark.png"></image>
-          <text>备注：{{item.remark}}</text>
+          <text>备注：{{item.mark}}</text>
         </view>
       </swiper-item>
     </swiper>
-    <view wx:else class="no-remind" style="color:#ffffff99">今日暂无提醒</view>
+    <view wx:else class="no-remind" style="color:#ffffff99">近期暂无提醒</view>
   </view>
   <view class="today-class-split">在此查看今日课程</view>
   <view wx:for="{{todayClassesList}}" wx:key="" class="today-class">

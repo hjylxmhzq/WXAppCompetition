@@ -11,19 +11,15 @@ Page({
     showDayChoose: false,
     time: '00:00',
     date: '2019-01-01',
-    courseArray: [
-      '高等数学',
-      '大学英语',
-      '大学物理'
-    ],
+    courseArray: [],
     classtime: new Array(wx.getStorageSync('classcount')).fill(1).map(function(item, index) {
       return {
         name: '第' + (index + 1).toString() + '节',
         checked: false
       }
     }),
-    daytime: new Array(7).fill(1).map(function (item, index) {
-      let daylist = ['一', '二', '三', '四', '五', '六', '天'];
+    daytime: new Array(7).fill(1).map(function(item, index) {
+      let daylist = ['一', '二', '三', '四', '五', '六', '日'];
       return {
         name: '星期' + daylist[index],
         checked: false
@@ -51,6 +47,7 @@ Page({
       mask: 'mask_on'
     });
   },
+
   comfirmDay(e) {
     this.setData({
       mask: 'mask_off',
@@ -89,6 +86,7 @@ Page({
         }
       }
     }
+
     if (selectedDay.length === 0) {
       selectedDay = '未选择星期';
     } else {
@@ -96,7 +94,7 @@ Page({
     }
     this.setData({
       selectedDay
-    })
+    });
   },
 
   comfirmTime(e) {
@@ -106,12 +104,14 @@ Page({
       showWeekChoose: false,
       showDayChoose: false
     });
+
     let classtime = this.data.classtime;
     let selectedTime = '';
     let lastIndex = 0;
     let fromc = 0;
     let toc = 0;
     let someChecked = false;
+
     for (let i = 0; i < classtime.length; i++) {
       if (classtime[i].checked) {
         someChecked = true;
@@ -137,14 +137,16 @@ Page({
         }
       }
     }
+
     if (selectedTime.length === 0) {
       selectedTime = '未选择时间';
     } else {
       selectedTime += '节';
     }
+
     this.setData({
       selectedTime
-    })
+    });
   },
 
   comfirmWeek(e) {
@@ -231,7 +233,7 @@ Page({
   changeDay(e) {
     let idx = e.currentTarget.dataset['index'];
     let daytime = this.data.daytime;
-    daytime = daytime.map(function (item, index) {
+    daytime = daytime.map(function(item, index) {
       if (index === idx) {
         item.checked = !item.checked;
         return item;
@@ -243,7 +245,7 @@ Page({
       daytime
     })
   },
-  
+
   chooseDay(e) {
     let {
       showDayChoose
@@ -253,7 +255,7 @@ Page({
       mask: 'mask_on'
     });
   },
- 
+
   chooseWeek(e) {
     let {
       showWeekChoose
@@ -323,58 +325,12 @@ Page({
     });
   },
   /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return {
+      title: "有个课程表",
+      path: "/pages/index/index?fromUserId=" + wx.getStorageSync('session_id'),
+    };
   }
 })

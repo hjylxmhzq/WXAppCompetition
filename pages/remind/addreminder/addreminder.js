@@ -7,33 +7,26 @@ Page({
   data: {
     time: '00:00',
     date: '2019-01-01',
-    courseArray: [
-      '高等数学',
-      '大学英语',
-      '大学物理'
-    ],
+    courseArray: [],
     courseIndex: 1,
     inwayIndex: 0,
-    inwayArray: ['微信','无']
+    inwayArray: ['微信', '无']
   },
-
 
   bindPickerChange(e) {
     this.setData({
       courseIndex: e.detail.value
-    })
+    });
   },
   bindDateChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       date: e.detail.value
-    })
+    });
   },
   bindTimeChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       time: e.detail.value
-    })
+    });
   },
   submitform(e) {
     let data = {
@@ -43,7 +36,7 @@ Page({
       date: this.data.date,
       time: this.data.time,
       inway: this.data.courseArray[this.data.courseIndex]
-    }
+    };
 
     wx.request({
       url: 'http://tony-space.top/wxapi/addreminder',
@@ -51,9 +44,9 @@ Page({
       method: 'POST',
       header: {
         'content-Type': 'application/x-www-form-urlencoded',
-        'Cookie': "app:sess="+wx.getStorageSync("session_id")
+        'Cookie': "app:sess=" + wx.getStorageSync("session_id")
       },
-      success: function (res, statusCode) {
+      success: function(res, statusCode) {
         if (res.statusCode == 201) {
           wx.navigateTo({
             url: '/pages/remind/remind',
@@ -71,55 +64,35 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
+    let that = this;
+    wx.request({
+      url: 'http://tony-space.top/wxapi/getclass',
+      dataType: 'json',
+      method: 'GET',
+      header: {
+        'Cookie': "app:sess=" + wx.getStorageSync("session_id")
+      },
+      success: function(res) {
+        let course = res.data;
+        let courseArray = [];
+        for (let c of course) {
+          courseArray.push(c['coursename']);
+        }
+        courseArray = [...new Set(courseArray)];
+        that.setData({
+          courseArray
+        });
+      }
+    });
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return {
+      title: "有个课程表",
+      path: "/pages/index/index?fromUserId=" + wx.getStorageSync('session_id'),
+    };
   }
 })

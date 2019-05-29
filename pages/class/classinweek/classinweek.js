@@ -6,9 +6,15 @@ Page({
    */
   data: {
     classcount: 10,
-    course: [[],[],[],[],[]],
+    course: [
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
     classcount: new Array(wx.getStorageSync('classcount')).fill(1).map(function(item, index) {
-      return String(index+1);
+      return String(index + 1);
     })
   },
   getTodayCourses(nowweek, callback) {
@@ -19,16 +25,14 @@ Page({
       header: {
         'Cookie': "app:sess=" + wx.getStorageSync("session_id")
       },
-      success: function (res) {
+      success: function(res) {
         let data = res.data;
-        console.log(data);
-
-
-        data = data.map(function (course) {
+        data = data.map(function(course) {
           let week = course['week'].split(';');
           let singleweek = [];
+
           week = week.slice(0, week.length - 1);
-          week.forEach(function (w) {
+          week.forEach(function(w) {
             if (w.length === 1) {
               singleweek.push(parseInt(w));
             } else {
@@ -41,14 +45,15 @@ Page({
               }
               singleweek = singleweek.concat(tempweek);
             }
-          })
-          course['week'] = [...new Set(singleweek)];
+          });
 
+          course['week'] = [...new Set(singleweek)];
           let day = course['day'];
           day = day.substr(2).split('; ');
           let singleday = [];
+
           day = day.slice(0, day.length - 1);
-          day.forEach(function (w) {
+          day.forEach(function(w) {
             if (w.length === 1) {
               singleday.push(parseInt(w));
             } else {
@@ -61,21 +66,20 @@ Page({
               }
               singleday = singleday.concat(tempday);
             }
-          })
+          });
 
           let time = course['time'].split(';')[0].split('-');
-          course['time'] = time.map((item)=>parseInt(item));
+          course['time'] = time.map((item) => parseInt(item));
           course['week'] = [...new Set(singleweek)];
           course['day'] = [...new Set(singleday)];
           return course;
-        })
+        });
+
         let courseData = [];
-        let classtotime = wx.getStorageSync('classtotime')
-        console.log(data)
+        let classtotime = wx.getStorageSync('classtotime');
 
-        data.forEach(function (course, index) {
+        data.forEach(function(course, index) {
           if (course['week'].indexOf(nowweek) !== -1) {
-
             let c = {
               courseName: course['coursename'],
               fromClass: course['time'][0],
@@ -88,51 +92,54 @@ Page({
             }
             courseData.push(c);
           }
-        })
-        console.log(courseData)
-        callback(courseData);
+        });
+
       }
-    })
+    });
   },
 
   setDayCourse(courseData) {
     let course = this.data.course;
 
-    for (let i=0;i<courseData.length;i++) {
-      for (let y=0; y<courseData[i]['day'].length;y++) {
+    for (let i = 0; i < courseData.length; i++) {
+      for (let y = 0; y < courseData[i]['day'].length; y++) {
         let day = courseData[i]['day'][y];
-        if (day>5) continue;
-        course[day-1][courseData[i]['fromClass'] - 1] = {
+        if (day > 5)
+          continue;
+        course[day - 1][courseData[i]['fromClass'] - 1] = {
           name: courseData[i]['courseName'],
           place: !!courseData[i]['place'] ? courseData[i]['place'] : '未设置地点'
         };
-        course[day-1][courseData[i]['toClass'] - 1] = {
+        course[day - 1][courseData[i]['toClass'] - 1] = {
           name: courseData[i]['courseName'],
           place: !!courseData[i]['place'] ? courseData[i]['place'] : '未设置地点'
         }
       }
     }
 
-    this.setData({course});
+    this.setData({
+      course
+    });
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     let coursecount = wx.getStorageSync('classcount');
     let course = this.data.course;
     let today = new Date();
     let daydiff = today.getDay() - 1;
     let firstday = today - daydiff * 86400000;
     let dateinweek = [];
-    for (let i=0;i<5;i++) {
+    for (let i = 0; i < 5; i++) {
       let thatday = new Date(firstday + i * 86400000);
-      let mstr = String(thatday.getMonth()+1);
+      let mstr = String(thatday.getMonth() + 1);
       let dstr = String(thatday.getDate());
-      mstr = ('00'+mstr).substr(-2);
-      dateinweek.push(mstr+'-'+dstr);
+      mstr = ('00' + mstr).substr(-2);
+      dateinweek.push(mstr + '-' + dstr);
     }
-    for (let i=0;i<5;i++) {
+    for (let i = 0; i < 5; i++) {
       let daycourse = new Array(coursecount).fill(0);
       daycourse = daycourse.map(function(item, index) {
         return {
@@ -145,55 +152,20 @@ Page({
     let nowweek = wx.getStorageSync('nowweek');
     this.getTodayCourses(nowweek, this.setDayCourse);
 
-    this.setData({course, date: dateinweek, nowweek})
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+    this.setData({
+      course,
+      date: dateinweek,
+      nowweek
+    })
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function() {
+    return {
+      title: "有个课程表",
+      path: "/pages/index/index?fromUserId=" + wx.getStorageSync('session_id'),
+    };
   }
 })
