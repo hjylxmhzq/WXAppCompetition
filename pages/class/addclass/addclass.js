@@ -105,7 +105,6 @@ Page({
       showClassChoose: false,
       showWeekChoose: false,
       showDayChoose: false
-
     });
     let classtime = this.data.classtime;
     let selectedTime = '';
@@ -228,6 +227,7 @@ Page({
       week
     })
   },
+
   changeDay(e) {
     let idx = e.currentTarget.dataset['index'];
     let daytime = this.data.daytime;
@@ -243,6 +243,7 @@ Page({
       daytime
     })
   },
+  
   chooseDay(e) {
     let {
       showDayChoose

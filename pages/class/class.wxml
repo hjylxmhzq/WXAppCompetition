@@ -1,47 +1,28 @@
 <!--pages/class/class.wxml-->
 <view class="{{mask}}" bindtap='add'></view>
 <view wx:if="{{courseData.length === 0}}">
-<view class="noclass">
-  今天暂无课程
-</view>
+  <view class="noclass">今天暂无课程</view>
 </view>
 <view wx:for="{{courseData}}" wx:key="unique">
   <view class="outerbox">
     <view class="number">
-      <view>
-        {{item.fromClass}}
-      </view>
-      <view>
-        {{item.toClass}}
-      </view>
+      <view>{{item.fromClass}}</view>
+      <view>{{item.toClass}}</view>
     </view>
     <view class="course_card">
-      <view class="course_name">
-        {{item.courseName}}
-      </view>
-      <view class="course_duration">
-        {{item.duration}}
-      </view>
-      <view class="course_teacher">
-        {{item.teacher}}
-      </view>
-      <view class="course_place">
-        {{item.place}}
-      </view>
-      <view class="course_mark">
-        {{item.mark}}
-      </view>
+      <view class="course_name">{{item.courseName}}</view>
+      <view class="course_duration">{{item.duration}}</view>
+      <view class="course_teacher">{{item.teacher}}</view>
+      <view class="course_place">{{item.place}}</view>
+      <view class="course_mark">{{item.mark}}</view>
     </view>
   </view>
 </view>
 <view class="{{addbutton}}">
-  <icon type="clear" size="40" color="rgb(100,100,100)" bindtap='add' />
+  <icon type="clear" size="40" color="rgb(100,100,100)" bindtap='add'></icon>
 </view>
 <view class="{{add_list}}">
-  <view class="add_item" bindtap="addclass">
-  </view>
-  <view class="add_item" bindtap="changeMode">
-  </view>
-  <view class="add_item">
-  </view>
+  <view class="add_item" bindtap="addclass"></view>
+  <view class="add_item" bindtap="changeMode"></view>
+  <view class="add_item"></view>
 </view>

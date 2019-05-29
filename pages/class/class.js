@@ -41,15 +41,17 @@ Page({
       });
     }
   },
+
   changeMode() {
     wx.navigateTo({
       url: '/pages/class/classinweek/classinweek',
-    })
+    });
   },
+
   addclass(e) {
     wx.navigateTo({
       url: '/pages/class/addclass/addclass',
-    })
+    });
   },
 
   getTodayCourses(today, nowweek, callback) {
@@ -60,19 +62,19 @@ Page({
       header: {
         'Cookie': "app:sess=" + wx.getStorageSync("session_id")
       },
-      success: function (res) {
+      success: function(res) {
         let data = res.data;
 
-        data = data.map(function (course) {
+        data = data.map(function(course) {
           let week = course['week'].split(';');
           let singleweek = [];
           week = week.slice(0, week.length - 1);
-          week.forEach(function (w) {
+          week.forEach(function(w) {
             if (w.length === 1) {
               singleweek.push(parseInt(w));
             } else {
               let f = parseInt(w.split('-')[0]);
-              let t = parseInt(w.split('-')[1]);
+              let t = w.split('-').length > 1 ? parseInt(w.split('-')[1]) : f;
               let len = t - f + 1;
               let tempweek = new Array(len);
               for (let i = 0; i < len; i++) {
@@ -87,13 +89,14 @@ Page({
           day = day.substr(2).split('; ');
           let singleday = [];
           day = day.slice(0, day.length - 1);
-          day.forEach(function (w) {
+          day.forEach(function(w) {
             if (w.length === 1) {
               singleday.push(parseInt(w));
             } else {
               let f = parseInt(w.split('-')[0]);
-              let t = parseInt(w.split('-')[1]);
+              let t = w.split('-').length > 1 ? parseInt(w.split('-')[1]) : f;
               let len = t - f + 1;
+              console.log(f, t, len)
               let tempday = new Array(len);
               for (let i = 0; i < len; i++) {
                 tempday[i] = f + i;
@@ -110,7 +113,7 @@ Page({
         })
         let courseData = [];
         let classtotime = wx.getStorageSync('classtotime')
-        data.forEach(function (course, index) {
+        data.forEach(function(course, index) {
           if (course['day'].indexOf(today) !== -1 && course['week'].indexOf(nowweek) !== -1) {
 
             let c = {
@@ -127,7 +130,8 @@ Page({
         })
         callback(courseData);
       }
-  })},
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -136,8 +140,11 @@ Page({
     let that = this;
     let today = new Date().getDay();
     let nowweek = wx.getStorageSync('nowweek');
+
     function callback(courseData) {
-      that.setData({courseData});
+      that.setData({
+        courseData
+      });
     }
     this.getTodayCourses(today, nowweek, callback);
   },

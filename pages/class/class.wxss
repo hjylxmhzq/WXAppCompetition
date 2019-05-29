@@ -1,4 +1,5 @@
 /* pages/class/class.wxss */
+
 page {
   background-color: #ccc;
   margin: 0;
@@ -23,7 +24,7 @@ page {
 .outerbox {
   margin: 40rpx 0;
   height: 250rpx;
-  font-size: 18px;
+  font-size: 28rpx;
 }
 
 .outerbox > view:nth-child(1) {
@@ -60,7 +61,6 @@ page {
 
 .course_duration {
   background-image: url(http://tony-space.top/static/icon/time_blue.png);
-
 }
 
 .course_teacher {
@@ -77,19 +77,19 @@ page {
 
 .add {
   transition: all 0.5s;
-  height: 40px;
+  height: 80rpx;
   position: fixed;
-  bottom: 20px;
-  right: 15px;
+  bottom: 40rpx;
+  right: 30rpx;
   transform: rotate(45deg);
 }
 
 .close {
   transition: all 0.5s;
-  height: 40px;
+  height: 80rpx;
   position: fixed;
-  bottom: 20px;
-  right: 15px;
+  bottom: 40rpx;
+  right: 30rpx;
 }
 
 .add_list_on {
@@ -97,113 +97,121 @@ page {
   pointer-events: auto;
   opacity: 1;
   position: fixed;
-  bottom: 80px;
-  right: 15px;
+  bottom: 160rpx;
+  right: 30rpx;
 }
 
 .add_list_off {
   transition: all 0.5s;
   position: fixed;
   opacity: 0;
-  bottom: 30px;
-  right: 15px;
+  bottom: 60rpx;
+  right: 30rpx;
   pointer-events: none;
 }
 
 .add_item {
   position: relative;
   background-color: #dacdeb;
-  border-radius: 50%; 
-  margin-bottom: 5px;
-  height: 40px;
-  width: 40px;
-  background-size: 26px 26px;
-  background-position: 7px 7px;
+  border-radius: 50%;
+  margin-bottom: 10rpx;
+  height: 80rpx;
+  width: 80rpx;
+  background-size: 52rpx 52rpx;
+  background-position: 14rpx 14rpx;
   background-repeat: no-repeat;
 }
 
 .add_item:nth-child(1) {
   background-image: url(http://tony-space.top/static/icon/add_white.png);
 }
+
 .add_item:nth-child(1)::before {
   content: '添加课程';
   display: block;
   position: absolute;
   background-color: white;
-  width: 90px;
-  height: 25px;
-  left: -100px;
-  top: 7px;
-  font-size: 14px;
-  line-height: 25px;
+  width: 180rpx;
+  height: 50rpx;
+  left: -200rpx;
+  top: 14rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 10rpx;
 }
+
 .add_item:nth-child(1)::after {
   content: '';
   display: block;
   position: absolute;
   background-color: white;
-  width: 10px;
-  height: 10px;
-  left: -15px;
-  top: 15px;
+  width: 20rpx;
+  height: 20rpx;
+  left: -30rpx;
+  top: 30rpx;
   transform: rotate(45deg);
 }
+
 .add_item:nth-child(2) {
   background-image: url(http://tony-space.top/static/icon/change.png);
 }
+
 .add_item:nth-child(2)::before {
   content: '周/日切换';
   display: block;
   position: absolute;
   background-color: white;
-  width: 90px;
-  height: 25px;
-  left: -100px;
-  top: 7px;
-  font-size: 14px;
-  line-height: 25px;
+  width: 180rpx;
+  height: 50rpx;
+  left: -200rpx;
+  top: 14rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 10rpx;
 }
+
 .add_item:nth-child(2)::after {
   content: '';
   display: block;
   position: absolute;
   background-color: white;
-  width: 10px;
-  height: 10px;
-  left: -15px;
-  top: 15px;
+  width: 20rpx;
+  height: 20rpx;
+  left: -30rpx;
+  top: 30rpx;
   transform: rotate(45deg);
 }
+
 .add_item:nth-child(3) {
   background-image: url(http://tony-space.top/static/icon/trans.png);
 }
+
 .add_item:nth-child(3)::before {
   content: '分享';
   display: block;
   position: absolute;
   background-color: white;
-  width: 50px;
-  height: 25px;
-  left: -60px;
-  top: 7px;
-  font-size: 14px;
-  line-height: 25px;
+  width: 100rpx;
+  height: 50rpx;
+  left: -120rpx;
+  top: 14rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 10rpx;
 }
+
 .add_item:nth-child(3)::after {
   content: '';
   display: block;
   position: absolute;
   background-color: white;
-  width: 10px;
-  height: 10px;
-  left: -15px;
-  top: 15px;
+  width: 20rpx;
+  height: 20rpx;
+  left: -30rpx;
+  top: 30rpx;
   transform: rotate(45deg);
 }
 
@@ -229,7 +237,7 @@ page {
 
 .noclass {
   text-align: center;
-  font-size: 16px;
+  font-size: 28rpx;
   line-height: 100px;
   color: #888;
 }

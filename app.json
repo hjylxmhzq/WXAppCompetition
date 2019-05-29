@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/remind/remind",
     "pages/index/index",
+    "pages/remind/remind",
     "pages/class/class",
     "pages/my/my",
     "pages/my/settings/settings",

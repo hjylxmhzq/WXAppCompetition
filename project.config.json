@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -80,6 +80,13 @@
 					"id": -1,
 					"name": "classinweek",
 					"pathName": "pages/class/classinweek/classinweek",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "setting",
+					"pathName": "pages/my/settings/settings",
 					"scene": null
 				}
 			]

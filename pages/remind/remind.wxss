@@ -85,7 +85,7 @@ view>image {
 .secondary-card>.line{
   width: 100%;
 }
-
+ 
 .secondary-card-title {
   width: 70%;
   height: 80rpx;
