@@ -1,7 +1,12 @@
 /* pages/remind/remind.wxss */
 
 page {
-  background: #f3f3f3;
+  background: linear-gradient(135deg, #eceddc 25%, transparent 25%) -50px 0,
+                linear-gradient(225deg, #eceddc 25%, transparent 25%) -50px 0,
+                linear-gradient(315deg, #eceddc 25%, transparent 25%),
+                linear-gradient(45deg, #eceddc 25%, transparent 25%);
+  background-size: 100px 100px;
+  background-color: rgb(255, 172, 172);
 }
 
 .line {
@@ -16,6 +21,7 @@ page {
   margin: 40rpx auto 0;
   border-radius: 20rpx;
   color: white;
+  box-shadow: 0 0 10px 0 #aaa;
   background-image: linear-gradient(150deg, #0473f1 0%, #048ee6 27%, #07a4e2 53%, #69daf8 100%);
 }
 
@@ -82,10 +88,10 @@ view>image {
   background-color: white;
 }
 
-.secondary-card>.line{
+.secondary-card>.line {
   width: 100%;
 }
- 
+
 .secondary-card-title {
   width: 70%;
   height: 80rpx;
@@ -123,7 +129,7 @@ view>image {
 }
 
 .secondary-card>view:nth-last-child(1) {
-  width:70%;
+  width: 70%;
   height: 80rpx;
   margin: 0 auto;
   display: flex;

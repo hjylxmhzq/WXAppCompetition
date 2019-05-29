@@ -4,23 +4,23 @@
   <view class="content-title">
     <text class="title-text">课程名称</text>
   </view>
-  <input name="content" placeholder='如：高等数学' class="content-input" name="reminder-content"></input>
+  <input name="content" placeholder='如：高等数学' class="content-input" name="reminder-content" value="{{name}}"></input>
   <view class="content-title">
     <image src="/icon/add.png" class="cancel-img"></image>
     <text class="cancel-mark-text">取消 / </text>
     <image src="/icon/add.png" class="add-img"></image>
     <text class="add-mark-text">添加备注</text>
   </view>
-  <textarea name="mark" placeholder='如：单周' class="content-input" name="reminder-mark"></textarea>
+  <textarea name="mark" placeholder='如：单周' class="content-input" name="reminder-mark" value="{{mark}}"></textarea>
   <view class="content-title">
     <text class="place-text">地点</text>
   </view>
-  <input name="content" placeholder='如：教学楼' class="content-input" name="reminder-place"></input>
+  <input name="content" placeholder='如：教学楼' class="content-input" name="reminder-place" value="{{place}}"></input>
   <view class="content-title">
     <text class="lecturer-text">教师</text>
   </view>
-  <input name="content" placeholder='如：高等数学' class="content-input" name="reminder-teacher"></input>
-  <button form-type="submit" type="primary" class="submit-button">OK</button>
+  <input name="content" placeholder='如：李老师' class="content-input" name="reminder-teacher" value='{{teacher}}'></input>
+  <button form-type="submit" type="primary" class="submit-button">{{buttonText}}</button>
   <view class="content-title"></view>
   <view class="class_choose_bar" bindtap='chooseTime'>
     <view>上课时间</view>

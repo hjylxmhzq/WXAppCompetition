@@ -1,7 +1,12 @@
 /* pages/index/index.wxss */
 
 page {
-  background-color: #ececec;
+  background: linear-gradient(135deg, #eceddc 25%, transparent 25%) -50px 0,
+                linear-gradient(225deg, #eceddc 25%, transparent 25%) -50px 0,
+                linear-gradient(315deg, #eceddc 25%, transparent 25%),
+                linear-gradient(45deg, #eceddc 25%, transparent 25%);
+  background-size: 100px 100px;
+  background-color: rgb(255, 172, 172);
 }
 
 .today-remind {
@@ -82,7 +87,7 @@ swiper-item>view:nth-child(3) {
 }
 
 .today-class-split {
-  width:70%;
+  width: 70%;
   font-size: 28rpx;
   color: #959595;
   margin: 20rpx auto;
@@ -92,6 +97,7 @@ swiper-item>view:nth-child(3) {
   background-color: #fff;
   margin-bottom: 40rpx;
   overflow: hidden;
+  box-shadow: 0 0 5px 0 #aaa;
 }
 
 .class-name {
@@ -140,6 +146,7 @@ swiper-item>view:nth-child(3) {
   transition: all 0.5s;
   height: 80rpx;
   position: fixed;
+  z-index: 2;
   bottom: 40rpx;
   right: 30rpx;
   transform: rotate(45deg);
@@ -158,6 +165,7 @@ swiper-item>view:nth-child(3) {
   pointer-events: auto;
   opacity: 1;
   position: fixed;
+  z-index: 2;
   bottom: 140rpx;
   right: 30rpx;
 }
@@ -172,16 +180,17 @@ swiper-item>view:nth-child(3) {
 }
 
 .add_item {
+  position: relative;
   background-color: #dacdeb;
   border-radius: 50%;
   margin-bottom: 10rpx;
   height: 80rpx;
   width: 80rpx;
-  background-size: 60rpx 60rpx;
-  background-position: 10rpx 10rpx;
+  box-shadow: 0 0 5px 0 #777;
+  background-size: 52rpx 52rpx;
+  background-position: 15rpx 15rpx;
   background-repeat: no-repeat;
 }
-
 .add_item:nth-child(1) {
   background-image: url(http://tony-space.top/static/icon/add_white.png);
 }
@@ -198,15 +207,17 @@ swiper-item>view:nth-child(3) {
   transition: all 0.5s;
   position: fixed;
   pointer-events: none;
+  z-index: 1;
   opacity: 0.8;
   width: 100%;
   height: 100%;
-  background-color: #777;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .mask_off {
   transition: all 0.5s;
   position: fixed;
+  z-index: 1;
   pointer-events: none;
   width: 100%;
   height: 100%;
@@ -218,4 +229,85 @@ swiper-item>view:nth-child(3) {
   height: 100%;
   width: 100%;
   opacity: 0;
+}
+
+.add_item:nth-child(1)::before {
+  content: '添加提醒';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 180rpx;
+  height: 50rpx;
+  left: -200rpx;
+  top: 14rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+.add_item:nth-child(1)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 20rpx;
+  height: 20rpx;
+  left: -30rpx;
+  top: 30rpx;
+  transform: rotate(45deg);
+}
+
+.add_item:nth-child(2)::before {
+  content: '本周课程';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 180rpx;
+  height: 50rpx;
+  left: -200rpx;
+  top: 14rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+.add_item:nth-child(2)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 20rpx;
+  height: 20rpx;
+  left: -30rpx;
+  top: 30rpx;
+  transform: rotate(45deg);
+}
+
+.add_item:nth-child(3)::before {
+  content: '分享';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 100rpx;
+  height: 50rpx;
+  left: -120rpx;
+  top: 14rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+.add_item:nth-child(3)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 20rpx;
+  height: 20rpx;
+  left: -30rpx;
+  top: 30rpx;
+  transform: rotate(45deg);
 }

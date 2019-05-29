@@ -1,4 +1,6 @@
 <!-- pages/index/index.wxml -->
+<view class="{{mask}}" bindtap='add'></view>
+
 <form bindsubmit='submitformid' report-submit='true' class="mock">
 <button form-type="submit" class="submitform">Submit</button></form>
 <view class="container">
@@ -64,6 +66,6 @@
   <view class="{{add_list}}">
     <view class="add_item" bindtap="addreminder"></view>
     <view class="add_item"></view>
-    <view class="add_item"></view>
+    <view class="add_item"><button open-type='share'></button></view>
   </view>
 </view>

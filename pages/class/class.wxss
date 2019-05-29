@@ -1,9 +1,12 @@
 /* pages/class/class.wxss */
 
 page {
-  background-color: #ccc;
-  margin: 0;
-  padding: 0;
+  background: linear-gradient(135deg, #eceddc 25%, transparent 25%) -50px 0,
+                linear-gradient(225deg, #eceddc 25%, transparent 25%) -50px 0,
+                linear-gradient(315deg, #eceddc 25%, transparent 25%),
+                linear-gradient(45deg, #eceddc 25%, transparent 25%);
+  background-size: 100px 100px;
+  background-color: rgb(255, 172, 172);
 }
 
 .page {
@@ -36,7 +39,8 @@ page {
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  background: #eee;
+  background: #efefef;
+  box-shadow: 0 0 10px 0 #aaa;
   width: 85%;
   height: 250rpx;
   border-radius: 20rpx;
@@ -118,7 +122,8 @@ page {
   height: 80rpx;
   width: 80rpx;
   background-size: 52rpx 52rpx;
-  background-position: 14rpx 14rpx;
+  background-position: 15rpx 15rpx;
+  box-shadow: 0 0 5px 0 #777;
   background-repeat: no-repeat;
 }
 
@@ -221,7 +226,7 @@ page {
   opacity: 0.8;
   width: 100%;
   height: 100%;
-  background-color: #777;
+  background-color: rgba(0, 0, 0, 0.5);
   top: 0;
 }
 

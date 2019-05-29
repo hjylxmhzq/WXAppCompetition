@@ -6,6 +6,13 @@ Page({
    */
   data: {
     mask: 'mask_off',
+    fromClass: false,
+    buttonText: 'OK',
+    name: '',
+    duration: '',
+    mark: '',
+    place: '',
+    teacher: '',
     showClassChoose: false,
     showWeekChoose: false,
     showDayChoose: false,
@@ -332,5 +339,10 @@ Page({
       title: "有个课程表",
       path: "/pages/index/index?fromUserId=" + wx.getStorageSync('session_id'),
     };
+  },
+  onLoad(option) {
+    if (option['name']) {
+      this.setData({...option, fromClass: true, buttonText: '修改课程'});
+    }
   }
 })

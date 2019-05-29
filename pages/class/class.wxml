@@ -9,7 +9,14 @@
       <view>{{item.fromClass}}</view>
       <view>{{item.toClass}}</view>
     </view>
-    <view class="course_card">
+    <view class="course_card" bindtap='clickCard' 
+    data-name='{{item.courseName}}'
+    data-duration='{{item.duration}}'
+    data-teacher='{{item.teacher}}'
+    data-place='{{item.teacher}}'
+    data-mark='{{item.mark}}'
+    data-uid='{{item.uid}}'
+    >
       <view class="course_name">{{item.courseName}}</view>
       <view class="course_duration">{{item.duration}}</view>
       <view class="course_teacher">{{item.teacher}}</view>
