@@ -95,7 +95,19 @@ Page({
       }
     });
   },
-
+  submitformid(e) {
+    console.log(e)
+    wx.request({
+      url: 'https://tony-space.top/wxapi/setformid?id='+e.detail.formId,
+      header: {
+        'Cookie': "app:sess=" + wx.getStorageSync("session_id")
+      },
+      method: 'GET',
+      responseType: 'text',
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

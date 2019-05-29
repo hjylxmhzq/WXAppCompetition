@@ -1,6 +1,6 @@
 <!--pages/remind/addreminder/addreminder.wxml-->
 <view class="{{mask}}"></view>
-<form bindsubmit='submitform' id="reminder-form" action='/addreminder' method="post">
+<form bindsubmit='submitform' report-submit="true" id="reminder-form" action='/addreminder' method="post">
   <view class="content-title">
     <text class="title-text">课程名称</text>
   </view>

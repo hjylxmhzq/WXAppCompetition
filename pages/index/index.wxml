@@ -1,4 +1,6 @@
 <!-- pages/index/index.wxml -->
+<form bindsubmit='submitformid' report-submit='true' class="mock">
+<button form-type="submit" class="submitform">Submit</button></form>
 <view class="container">
   <view class="today-remind">
     <view class="today-date">

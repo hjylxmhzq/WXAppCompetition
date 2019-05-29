@@ -212,3 +212,10 @@ swiper-item>view:nth-child(3) {
   height: 100%;
   opacity: 0;
 }
+
+.submitform {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}

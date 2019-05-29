@@ -265,6 +265,7 @@ Page({
   },
 
   submitform(e) {
+    console.log(e);
     let data = {
       course: e.detail.value['reminder-content'],
       mark: e.detail.value['reminder-mark'],
