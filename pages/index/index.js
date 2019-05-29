@@ -10,9 +10,12 @@ Page({
     add_list: 'add_list_off',
     todayDate: "",
     remindList: [{
-      title: "",
-      time: "",
-      remark: ""
+      date: '4月17日',
+      day: '星期四',
+      time: '9:00',
+      course: '高等数学',
+      content: '第四章随堂小测',
+      mark: '本章内容较多'
     }],
     todayClassesList: []
   },
