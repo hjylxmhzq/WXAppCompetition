@@ -1,9 +1,5 @@
 // pages/class/class.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     addbutton: 'add',
     mask: 'mask_off',
@@ -40,16 +36,15 @@ Page({
   },
 
   clickCard(e) {
-    console.log(e);
     let ds = e.currentTarget.dataset;
     wx.navigateTo({
       url: `addclass/addclass?name=${ds['name']}&duration=${ds['duration']}&mark=${ds['mark']}&place=${ds['place']}&teacher=${ds['teacher']}&uid=${ds['uid']}`
-    })
+    });
   },
 
   getTodayCourses(today, nowweek, callback) {
     wx.request({
-      url: 'http://tony-space.top/wxapi/getclass',
+      url: 'https://tony-space.top/wxapi/getclass',
       dataType: 'json',
       method: 'GET',
       header: {
@@ -89,7 +84,6 @@ Page({
               let f = parseInt(w.split('-')[0]);
               let t = w.split('-').length > 1 ? parseInt(w.split('-')[1]) : f;
               let len = t - f + 1;
-              console.log(f, t, len)
               let tempday = new Array(len);
               for (let i = 0; i < len; i++) {
                 tempday[i] = f + i;
@@ -107,7 +101,6 @@ Page({
 
         let courseData = [];
         let classtotime = wx.getStorageSync('classtotime')
-        console.log(data);
         data.forEach(function(course, index) {
           if (course['day'].indexOf(today) !== -1 && course['week'].indexOf(nowweek) !== -1) {
             let c = {
@@ -128,16 +121,12 @@ Page({
     });
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function(options) {
     let that = this;
     let today = new Date().getDay();
     let nowweek = wx.getStorageSync('nowweek');
 
     function callback(courseData) {
-      console.log(courseData);
       courseData.sort((a, b) => {
         return a['fromClass'] - b['fromClass'];
       })
@@ -148,7 +137,7 @@ Page({
     this.getTodayCourses(today, nowweek, callback);
   },
 
-  onShow() {
+  onShow: function() {
     this.onLoad();
   },
 
@@ -156,9 +145,6 @@ Page({
     this.onLoad();
   },
 
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function() {
     return {
       title: "有个课程表",

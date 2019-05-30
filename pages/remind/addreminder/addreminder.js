@@ -1,9 +1,5 @@
 // pages/remind/addreminder/addreminder.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     time: '00:00',
     date: '2019-01-01',
@@ -45,7 +41,7 @@ Page({
     };
 
     wx.request({
-      url: 'http://tony-space.top/wxapi/addreminder',
+      url: 'https://tony-space.top/wxapi/addreminder',
       data,
       method: 'POST',
       header: {
@@ -66,20 +62,15 @@ Page({
                 }), 800);
             }
           });
-        } else {
-          console.log('add reminder fail');
         }
       }
     });
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function(options) {
     let that = this;
     wx.request({
-      url: 'http://tony-space.top/wxapi/getclass',
+      url: 'https://tony-space.top/wxapi/getclass',
       dataType: 'json',
       method: 'GET',
       header: {
@@ -115,9 +106,6 @@ Page({
     });
   },
 
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function() {
     return {
       title: "有个课程表",
@@ -131,7 +119,7 @@ Page({
       uid
     }
     wx.request({
-      url: 'http://tony-space.top/wxapi/removereminder',
+      url: 'https://tony-space.top/wxapi/removereminder',
       data,
       method: 'POST',
       header: {
@@ -144,10 +132,10 @@ Page({
           icon: 'success',
           duration: 800
         });
-        setTimeout(()=>{
+        setTimeout(() => {
           wx.navigateBack();
-        }, 800)
+        }, 800);
       }
-    })
+    });
   }
 })

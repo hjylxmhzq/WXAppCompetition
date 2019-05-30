@@ -1,9 +1,5 @@
 // pages/index/index.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     mask: 'mask_off',
     addbutton: 'add',
@@ -15,7 +11,7 @@ Page({
 
   getTodayCourses(today, nowweek, callback) {
     wx.request({
-      url: 'http://tony-space.top/wxapi/getclass',
+      url: 'https://tony-space.top/wxapi/getclass',
       dataType: 'json',
       method: 'GET',
       header: {
@@ -98,7 +94,6 @@ Page({
       addbutton: 'add',
       add_list: 'add_list_off'
     });
-    console.log(e)
     wx.request({
       url: 'https://tony-space.top/wxapi/setformid?id=' + e.detail.formId,
       header: {
@@ -108,12 +103,9 @@ Page({
       responseType: 'text',
       fail: function(res) {},
       complete: function(res) {},
-    })
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function(options) {
     let that = this;
     let today = new Date();
@@ -133,7 +125,7 @@ Page({
     });
 
     wx.request({
-      url: 'http://tony-space.top/wxapi/getreminder',
+      url: 'https://tony-space.top/wxapi/getreminder',
       dataType: 'json',
       method: 'GET',
       header: {
@@ -179,9 +171,6 @@ Page({
             return subTime > 0 && subTime < 3600 * 24 * 2;
           })
         });
-      },
-      fail: function() {
-        console.log('request reminder data fail');
       }
     });
   },
@@ -214,9 +203,6 @@ Page({
     })
   },
 
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function() {
     return {
       title: "某课程表",

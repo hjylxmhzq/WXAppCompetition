@@ -2,22 +2,25 @@
 <view class="{{mask}}"></view>
 <form bindsubmit='submitform' report-submit="true" id="reminder-form" action='/addreminder' method="post">
   <view class="content-title">
+    <image mode="widthFix" src="/icon/course_black.png"></image>
     <text class="title-text">课程名称</text>
   </view>
   <input name="content" placeholder='如：高等数学' class="content-input" name="reminder-content" value="{{name}}"></input>
   <view class="content-title">
-    <image src="/icon/add.png" class="cancel-img"></image>
-    <text class="cancel-mark-text">取消 / </text>
-    <image src="/icon/add.png" class="add-img"></image>
-    <text class="add-mark-text">添加备注</text>
+    <image mode="widthFix" src="/icon/add.png" class="cancel-img"></image>
+    <text class="title-text">取消 / </text>
+    <image mode="widthFix" src="/icon/add.png" class="add-img"></image>
+    <text class="title-text">添加备注</text>
   </view>
   <textarea name="mark" placeholder='如：单周' class="content-input" name="reminder-mark" value="{{mark}}"></textarea>
   <view class="content-title">
-    <text class="place-text">地点</text>
+    <image mode="widthFix" src="/icon/locale_black.png"></image>
+    <text class="title-text">地点</text>
   </view>
   <input name="content" placeholder='如：教学楼' class="content-input" name="reminder-place" value="{{place}}"></input>
   <view class="content-title">
-    <text class="lecturer-text">教师</text>
+    <image mode="widthFix" src="/icon/lecturer_black.png"></image>
+    <text class="title-text">教师</text>
   </view>
   <input name="content" placeholder='如：李老师' class="content-input" name="reminder-teacher" value='{{teacher}}'></input>
   <view class="submit-buttons">
@@ -25,17 +28,19 @@
     <button form-type="submit" type="primary" class="submit-button">{{buttonText}}</button>
   </view>
   <view class="content-title"></view>
-  <view class="class_choose_bar" bindtap='chooseTime'>
-    <view>上课时间</view>
-    <view>{{selectedTime}}</view>
-  </view>
-  <view class="class_choose_bar" bindtap='chooseDay'>
-    <view>上课星期</view>
-    <view>{{selectedDay}}</view>
-  </view>
-  <view class="class_choose_bar" bindtap='chooseWeek'>
-    <view>上课周数</view>
-    <view>{{selectedWeek}}</view>
+  <view>
+    <view class="class_choose_bar" bindtap='chooseTime'>
+      <view>上课时间</view>
+      <view>{{selectedTime}}</view>
+    </view>
+    <view class="class_choose_bar" bindtap='chooseDay'>
+      <view>上课星期</view>
+      <view>{{selectedDay}}</view>
+    </view>
+    <view class="class_choose_bar" bindtap='chooseWeek'>
+      <view>上课周数</view>
+      <view>{{selectedWeek}}</view>
+    </view>
   </view>
   <view wx:if="{{showClassChoose}}">
     <view class="class_time">

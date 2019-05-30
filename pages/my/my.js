@@ -1,9 +1,5 @@
 // pages/my/my.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     settings: [{
       icon: "/icon/set.png",
@@ -20,9 +16,6 @@ Page({
     }]
   },
 
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function() {
     return {
       title: "有个课程表",

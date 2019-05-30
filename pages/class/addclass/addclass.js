@@ -1,9 +1,5 @@
 // pages/remind/addreminder/addreminder.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     mask: 'mask_off',
     fromClass: false,
@@ -247,10 +243,10 @@ Page({
       } else {
         return item;
       }
-    })
+    });
     this.setData({
       daytime
-    })
+    });
   },
 
   chooseDay(e) {
@@ -302,7 +298,7 @@ Page({
       return;
     }
     wx.request({
-      url: 'http://tony-space.top/wxapi/addclass',
+      url: 'https://tony-space.top/wxapi/addclass',
       data,
       method: 'POST',
       header: {
@@ -323,17 +319,12 @@ Page({
                 }), 800);
             }
           });
-        } else {
-          console.log('add reminder fail');
         }
-      },
-      fail: function(res) {
-        console.log('fail to add reminder');
       }
     });
   },
 
-  onShow() {
+  onShow: function() {
     this.onLoad();
   },
 
@@ -352,7 +343,6 @@ Page({
   },
 
   onLoad(option) {
-    console.log(option)
     if (option && option['name']) {
       for (let key in option) {
         option[key] = decodeURIComponent(option[key]);
@@ -372,20 +362,20 @@ Page({
     }
   },
 
-  deleteClass: function (e) {
+  deleteClass: function(e) {
     let uid = this.data.uid;
     let data = {
       uid
-    }
+    };
     wx.request({
-      url: 'http://tony-space.top/wxapi/removeclass',
+      url: 'https://tony-space.top/wxapi/removeclass',
       data,
       method: 'POST',
       header: {
         'content-Type': 'application/x-www-form-urlencoded',
         'Cookie': "app:sess=" + wx.getStorageSync("session_id")
       },
-      success: function () {
+      success: function() {
         wx.showToast({
           title: '已删除课程',
           icon: 'success',

@@ -1,9 +1,5 @@
 // pages/class/classinweek/classinweek.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     classcount: 10,
     course: [
@@ -20,7 +16,7 @@ Page({
 
   getTodayCourses(nowweek, callback) {
     wx.request({
-      url: 'http://tony-space.top/wxapi/getclass',
+      url: 'https://tony-space.top/wxapi/getclass',
       dataType: 'json',
       method: 'GET',
       header: {
@@ -28,7 +24,6 @@ Page({
       },
       success: function(res) {
         let data = res.data;
-        console.log(data)
         data = data.map(function(course) {
           let week = course['week'].split(';');
           course['weekstr'] = week;
@@ -97,25 +92,22 @@ Page({
               weekstr: course['weekstr'],
               uid: course['uniqueid']
             }
-            console.log(c)
-
             courseData.push(c);
           }
         });
-        callback(courseData)
+        callback(courseData);
       }
     });
   },
 
   setDayCourse(courseData) {
     let course = this.data.course;
-
     for (let i = 0; i < courseData.length; i++) {
       for (let y = 0; y < courseData[i]['day'].length; y++) {
         let day = courseData[i]['day'][y];
         if (day > 5)
           continue;
-        for (let fromc = courseData[i]['fromClass'] - 1; fromc <= courseData[i]['toClass']-1; fromc++){
+        for (let fromc = courseData[i]['fromClass'] - 1; fromc <= courseData[i]['toClass'] - 1; fromc++) {
           course[day - 1][fromc] = {
             ...courseData[i],
             name: courseData[i]['courseName'],
@@ -126,15 +118,15 @@ Page({
         }
       }
     }
-  console.log(course);
     this.setData({
       course
     });
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  onShow: function () {
+    this.onLoad();
+  },
+
   onLoad: function(options) {
     let coursecount = wx.getStorageSync('classcount');
     let course = this.data.course;
@@ -166,7 +158,7 @@ Page({
       course,
       date: dateinweek,
       nowweek
-    })
+    });
   },
 
   clickClass(e) {
@@ -177,16 +169,13 @@ Page({
     let url = `/pages/class/addclass/addclass?name=${ds['name']}&place=${ds['place']}&week=${ds['week']}&uid=${ds['uid']}&day=${ds['day']}&time=${ds['time']}&mark=${ds['mark']}&teacher=${ds['teacher']}`;
     wx.navigateTo({
       url
-    })
+    });
   },
 
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     this.onLoad();
   },
 
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function() {
     return {
       title: "有个课程表",

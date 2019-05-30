@@ -11,93 +11,64 @@ page {
   background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
 }
 
+image {
+  width: 35rpx;
+  margin: 0 10rpx 0 10%;
+}
+
 .content-title {
-  height: 25px;
+  height: 60rpx;
   background-color: #eee;
-}
-
-.content-seg {
-  height: 20px;
-  background-color: #eee;
-}
-
-.bell-img {
-  height: 15px;
-  width: 15px;
-  margin: 4px 5px 0 20px;
-  vertical-align: middle;
-  position: absolute;
-}
-
-.add-img {
-  height: 15px;
-  width: 15px;
-  margin: 5px 5px 0 80px;
-  vertical-align: middle;
-  position: absolute;
-}
-
-.cancel-img {
-  height: 15px;
-  width: 15px;
-  margin: 5px 5px 0 20px;
-  vertical-align: middle;
-  position: absolute;
-  transform: rotate(45deg);
-}
-
-.content-input {
-  padding: 10px;
-  height: 60px;
-  width: 100%;
-  font-size: 14px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  z-index: 2;
 }
 
 .title-text {
-  font-size: 13px;
-  margin: 3px 0 0 40px;
-  vertical-align: middle;
-  position: absolute;
+  font-size: 26rpx;
 }
 
-.cancel-mark-text {
-  font-size: 13px;
-  margin: 3px 0 0 40px;
-  vertical-align: middle;
-  position: absolute;
+.add-img {
+  margin-left: 15rpx;
 }
 
-.add-mark-text {
-  font-size: 13px;
-  margin: 3px 0 0 100px;
-  vertical-align: middle;
-  position: absolute;
+.cancel-img {
+  transform: rotate(45deg);
+}
+
+textarea.content-input {
+  height: 120rpx;
+}
+
+.content-input {
+  margin: 20rpx auto;
+  height: 60rpx;
+  width: 80%;
+  font-size: 28rpx;
 }
 
 .picker {
-  font-size: 14px;
-  padding: 15px;
-  height: 14px;
+  height: 80rpx;
+  font-size: 28rpx;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
 }
 
-.picker-itemleft {
-  position: absolute;
-  left: 0px;
-  padding-left: 20px;
-  width: 100%;
-}
-
-.picker-itemright {
-  position: absolute;
-  right: 0px;
-  padding-right: 20px;
+picker:nth-child(1) .picker {
+  border-top: none;
 }
 
 .submit-buttons {
   width: 90%;
   left: 5%;
   position: absolute;
-  bottom: 15px;
+  bottom: 30rpx;
 }
 
 .submit-button {

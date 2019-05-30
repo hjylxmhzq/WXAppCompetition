@@ -1,5 +1,14 @@
 /* pages/my/my.wxss */
 
+page {
+  background: linear-gradient(135deg, #e1f4fd 25%, transparent 25%) -50px 0,
+                linear-gradient(225deg, #e1f4fd 25%, transparent 25%) -50px 0,
+                linear-gradient(315deg, #e1f4fd 25%, transparent 25%),
+                linear-gradient(45deg, #e1f4fd 25%, transparent 25%);
+  background-size: 100px 100px;
+  background-color: #ecfcfd;
+}
+
 .user-info {
   width: 100%;
   height: 400rpx;

@@ -1,8 +1,5 @@
 // pages/remind/remind.js
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
     addbutton: 'add',
     mask: 'mask_off',
@@ -46,13 +43,11 @@ Page({
       url: '/pages/class/classinweek/classinweek',
     });
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
+
   onLoad: function(options) {
     let that = this;
     wx.request({
-      url: 'http://tony-space.top/wxapi/getreminder',
+      url: 'https://tony-space.top/wxapi/getreminder',
       dataType: 'json',
       method: 'GET',
       header: {
@@ -76,10 +71,8 @@ Page({
           }
         });
 
-        console.log(data)
-
         let d = data.map(function(item) {
-          let daylist = ['日','一', '二', '三', '四', '五', '六']
+          let daylist = ['日', '一', '二', '三', '四', '五', '六']
           let day = daylist[(new Date(item['remind_date'] + ' ' + item['remind_time']).getDay())];
           return {
             date: item['remind_date'].split('-')[1] + '月' + item['remind_date'].split('-')[2] + '日',
@@ -100,30 +93,23 @@ Page({
           course: '',
           content: '还未设置提醒',
           mark: '还未设置提醒'
-        }
-        console.log(d)
+        };
         that.setData({
           firstRemind: d.length > 0 ? d[0] : defaultDate,
           otherRemindArray: d.slice(1)
         });
-      },
-      fail: function() {
-        console.log('request reminder data fail');
       }
     });
   },
 
-  onShow() {
+  onShow: function() {
     this.onLoad();
   },
 
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     this.onLoad();
   },
-  
-  /**
-   * 用户点击右上角分享
-   */
+
   onShareAppMessage: function() {
     return {
       title: "有个课程表",

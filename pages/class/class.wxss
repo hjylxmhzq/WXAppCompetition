@@ -1,17 +1,12 @@
 /* pages/class/class.wxss */
 
 page {
-  background: linear-gradient(135deg, #eceddc 25%, transparent 25%) -50px 0,
-                linear-gradient(225deg, #eceddc 25%, transparent 25%) -50px 0,
-                linear-gradient(315deg, #eceddc 25%, transparent 25%),
-                linear-gradient(45deg, #eceddc 25%, transparent 25%);
+  background: linear-gradient(135deg, #e1f4fd 25%, transparent 25%) -50px 0,
+                linear-gradient(225deg, #e1f4fd 25%, transparent 25%) -50px 0,
+                linear-gradient(315deg, #e1f4fd 25%, transparent 25%),
+                linear-gradient(45deg, #e1f4fd 25%, transparent 25%);
   background-size: 100px 100px;
-  background-color: rgb(252, 204, 204);
-}
-
-.page {
-  position: relative;
-  height: 750rpx;
+  background-color: #ecfcfd;
 }
 
 .outerbox {
@@ -135,12 +130,12 @@ page {
   width: 80rpx;
   background-size: 52rpx 52rpx;
   background-position: 15rpx 15rpx;
-  box-shadow: 0 0 5px 0 #777;
+  box-shadow: 0 0 10rpx 0 #777;
   background-repeat: no-repeat;
 }
 
 .add_item:nth-child(1) {
-  background-image: url(http://tony-space.top/static/icon/add_white.png);
+  background-image: url(https://tony-space.top/static/icon/add_white.png);
 }
 
 .add_item:nth-child(1)::before {
@@ -171,7 +166,7 @@ page {
 }
 
 .add_item:nth-child(2) {
-  background-image: url(http://tony-space.top/static/icon/change.png);
+  background-image: url(https://tony-space.top/static/icon/change.png);
 }
 
 .add_item:nth-child(2)::before {
@@ -202,7 +197,7 @@ page {
 }
 
 .add_item:nth-child(3) {
-  background-image: url(http://tony-space.top/static/icon/trans.png);
+  background-image: url(https://tony-space.top/static/icon/trans.png);
 }
 
 .add_item:nth-child(3)::before {
@@ -257,7 +252,7 @@ page {
 .noclass {
   text-align: center;
   font-size: 28rpx;
-  line-height: 100px;
+  line-height: 200rpx;
   color: #888;
 }
 

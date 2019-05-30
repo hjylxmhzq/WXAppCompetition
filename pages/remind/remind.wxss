@@ -1,12 +1,12 @@
 /* pages/remind/remind.wxss */
 
 page {
-  background: linear-gradient(135deg, #eceddc 25%, transparent 25%) -50px 0,
-                linear-gradient(225deg, #eceddc 25%, transparent 25%) -50px 0,
-                linear-gradient(315deg, #eceddc 25%, transparent 25%),
-                linear-gradient(45deg, #eceddc 25%, transparent 25%);
+  background: linear-gradient(135deg, #e1f4fd 25%, transparent 25%) -50px 0,
+                linear-gradient(225deg, #e1f4fd 25%, transparent 25%) -50px 0,
+                linear-gradient(315deg, #e1f4fd 25%, transparent 25%),
+                linear-gradient(45deg, #e1f4fd 25%, transparent 25%);
   background-size: 100px 100px;
-  background-color: rgb(255, 172, 172);
+  background-color: #ecfcfd;
 }
 
 .line {
@@ -21,7 +21,7 @@ page {
   margin: 40rpx auto 0;
   border-radius: 20rpx;
   color: white;
-  box-shadow: 0 0 10px 0 #aaa;
+  box-shadow: 0 0 20rpx 0 #aaa;
   background-image: linear-gradient(150deg, #0473f1 0%, #048ee6 27%, #07a4e2 53%, #69daf8 100%);
 }
 
@@ -86,7 +86,7 @@ view>image {
   font-size: 28rpx;
   margin-bottom: 20rpx;
   background-color: white;
-  box-shadow: 0 0 5px 0 #aaa;
+  box-shadow: 0 0 10rpx 0 #aaa;
 }
 
 .secondary-card>.line {
@@ -202,12 +202,12 @@ view>image {
   width: 80rpx;
   background-size: 52rpx 52rpx;
   background-position: 15rpx 15rpx;
-  box-shadow: 0 0 5px 0 #777;
+  box-shadow: 0 0 10rpx 0 #777;
   background-repeat: no-repeat;
 }
 
 .add_item:nth-child(1) {
-  background-image: url(http://tony-space.top/static/icon/add_white.png);
+  background-image: url(https://tony-space.top/static/icon/add_white.png);
 }
 
 .add_item:nth-child(1)::before {
@@ -238,7 +238,7 @@ view>image {
 }
 
 .add_item:nth-child(2) {
-  background-image: url(http://tony-space.top/static/icon/change.png);
+  background-image: url(https://tony-space.top/static/icon/change.png);
 }
 
 .add_item:nth-child(2)::before {
@@ -269,7 +269,7 @@ view>image {
 }
 
 .add_item:nth-child(3) {
-  background-image: url(http://tony-space.top/static/icon/trans.png);
+  background-image: url(https://tony-space.top/static/icon/trans.png);
 }
 
 .add_item:nth-child(3)::before {
@@ -320,7 +320,7 @@ view>image {
 }
 
 .share {
-  width: 40px;
-  height: 40px;
+  width: 80rpx;
+  height: 80rpx;
   background-color: transparent;
 }

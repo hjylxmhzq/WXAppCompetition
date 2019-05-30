@@ -11,165 +11,108 @@ page {
   background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
 }
 
+image {
+  width: 35rpx;
+  margin: 0 10rpx 0 10%;
+}
+
 .content-title {
-  height: 35px;
+  height: 60rpx;
   background-color: #eee;
-  position: relative;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
   z-index: 2;
 }
 
-.content-seg {
-  height: 20px;
-  background-color: #eee;
-}
-
-.bell-img {
-  height: 15px;
-  width: 15px;
-  margin: 4px 5px 0 20px;
-  vertical-align: middle;
-  position: absolute;
+.title-text{
+  font-size: 26rpx;
 }
 
 .add-img {
-  height: 15px;
-  width: 15px;
-  margin: 10px 5px 0 80px;
-  vertical-align: middle;
-  position: absolute;
+  margin-left: 15rpx;
 }
 
 .cancel-img {
-  height: 15px;
-  width: 15px;
-  margin: 10px 5px 0 15px;
-  vertical-align: middle;
-  position: absolute;
   transform: rotate(45deg);
 }
 
+textarea.content-input {
+  height: 120rpx;
+}
+
 .content-input {
-  padding: 10px;
-  height: 30px;
-  width: 100%;
-  font-size: 14px;
+  margin: 20rpx auto;
+  height: 60rpx;
+  width: 80%;
+  font-size: 28rpx;
 }
 
-.title-text {
-  font-size: 13px;
-  padding: 10px 0 0 40px;
-  display: block;
-  height: 25px;
-  background-image: url(http://tony-space.top/static/icon/course_black.png);
-  background-size: 15px 15px;
-  background-position: 15px 11px;
-  background-repeat: no-repeat;
-}
-
-.lecturer-text {
-  font-size: 13px;
-  padding: 10px 0 0 40px;
-  display: block;
-  height: 25px;
-  background-image: url(http://tony-space.top/static/icon/lecturer_black.png);
-  background-size: 15px 15px;
-  background-position: 15px 11px;
-  background-repeat: no-repeat;
-}
-
-.place-text {
-  font-size: 13px;
-  padding: 10px 0 0 40px;
-  display: block;
-  height: 25px;
-  background-image: url(http://tony-space.top/static/icon/locale_black.png);
-  background-size: 15px 15px;
-  background-position: 15px 11px;
-  background-repeat: no-repeat;
-}
-
-.cancel-mark-text {
-  font-size: 13px;
-  margin: 8px 0 0 35px;
-  vertical-align: middle;
-  position: absolute;
-}
-
-.add-mark-text {
-  font-size: 13px;
-  margin: 8px 0 0 100px;
-  vertical-align: middle;
-  position: absolute;
+.content-title:nth-child(5) image {
+  width: 30rpx;
 }
 
 .picker {
-  font-size: 14px;
-  padding: 15px;
-  height: 14px;
+  font-size: 28rpx;
+  padding: 30rpx;
+  height: 30rpx;
 }
 
 .picker-itemleft {
   position: absolute;
-  left: 0px;
-  padding-left: 20px;
+  left: 0;
+  padding-left: 40rpx;
   width: 100%;
 }
 
 .picker-itemright {
   position: absolute;
-  right: 0px;
-  padding-right: 20px;
+  right: 0;
+  padding-right: 40rpx;
 }
 
 .submit-buttons {
   width: 90%;
   left: 5%;
   position: absolute;
-  bottom: 15px;
+  bottom: 30rpx;
 }
 
-.submit-button{
+.submit-button {
   margin-top: 20rpx;
 }
 
 .class_choose_bar {
-  position: relative;
-  height: 40px;
-  line-height: 40px;
-  font-size: 16px;
+  height: 80rpx;
+  font-size: 28rpx;
   border-top: 1px solid #ddd;
-  margin-top: -1px;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
 }
 
-.class_choose_bar > view {
-  display: inline-block;
-}
-
-.class_choose_bar > view:nth-child(1) {
-  margin-left: 20rpx;
+.class_choose_bar:nth-child(1) {
+  border-top: none;
 }
 
 .class_choose_bar > view:nth-child(2) {
-  margin-left: 350rpx;
   color: #999;
-}
-
-.class_choose_bar > view:nth-child(n) {
-  display: inline-block;
 }
 
 .class_time {
   position: absolute;
   display: flex;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
   min-height: 40rpx;
   padding-top: 40rpx;
   padding-bottom: 40rpx;
   padding-left: 5%;
   background-color: white;
-  font-size: 14px;
+  font-size: 28rpx;
   flex-wrap: wrap;
   z-index: 4;
 }
@@ -182,10 +125,10 @@ page {
 .class_week {
   position: absolute;
   display: flex;
-  bottom: 100px;
+  bottom: 200rpx;
   width: 95%;
   left: 5%;
-  font-size: 14px;
+  font-size: 28rpx;
   flex-wrap: wrap;
   z-index: 4;
 }
