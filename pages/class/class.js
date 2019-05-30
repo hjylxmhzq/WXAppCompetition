@@ -93,7 +93,7 @@ Page({
           });
 
           let time = course['time'].split(';')[0].split('-');
-          course['time'] = [parseInt(time[0]), parseInt(time[1])];
+          course['time'] = [parseInt(time[0]), time.lemgth>1?parseInt(time[1]):parseInt(time[0])];
           course['week'] = [...new Set(singleweek)];
           course['day'] = [...new Set(singleday)];
           return course;
