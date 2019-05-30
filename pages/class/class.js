@@ -25,13 +25,13 @@ Page({
 
   changeMode() {
     wx.navigateTo({
-      url: '/pages/class/classinweek/classinweek',
+      url: '/pages/class/classinweek/classinweek'
     });
   },
 
   addclass(e) {
     wx.navigateTo({
-      url: '/pages/class/addclass/addclass',
+      url: '/pages/class/addclass/addclass'
     });
   },
 
@@ -93,7 +93,7 @@ Page({
           });
 
           let time = course['time'].split(';')[0].split('-');
-          course['time'] = [parseInt(time[0]), time.lemgth>1?parseInt(time[1]):parseInt(time[0])];
+          course['time'] = [parseInt(time[0]), time.lemgth > 1 ? parseInt(time[1]) : parseInt(time[0])];
           course['week'] = [...new Set(singleweek)];
           course['day'] = [...new Set(singleday)];
           return course;
