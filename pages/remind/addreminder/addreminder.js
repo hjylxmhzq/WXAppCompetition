@@ -18,21 +18,24 @@ Page({
       courseIndex: e.detail.value
     });
   },
+
   bindDateChange: function(e) {
     this.setData({
       date: e.detail.value
     });
   },
+
   bindTimeChange: function(e) {
     this.setData({
       time: e.detail.value
     });
   },
+
   submitform(e) {
     let data = {
       content: e.detail.value['reminder-content'],
       mark: e.detail.value['reminder-mark'],
-      course: this.data.courseArray[this.data.courseIndex],
+      type: this.data.courseArray[this.data.courseIndex],
       date: this.data.date,
       time: this.data.time,
       inway: this.data.courseArray[this.data.courseIndex]
@@ -48,15 +51,21 @@ Page({
       },
       success: function(res, statusCode) {
         if (res.statusCode == 201) {
-          wx.navigateTo({
-            url: '/pages/remind/remind',
-          })
+          wx.showToast({
+            title: "添加成功",
+            icon: 'success',
+            duration: 800,
+            mask: true,
+            success: () => {
+              setTimeout(() =>
+                wx.navigateBack({
+                  delta: 1
+                }), 800);
+            }
+          });
         } else {
           console.log('add reminder fail');
         }
-      },
-      fail: function(res) {
-        console.log('fail to add reminder');
       }
     });
   },

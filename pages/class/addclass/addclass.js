@@ -162,7 +162,6 @@ Page({
       showClassChoose: false,
       showWeekChoose: false,
       showDayChoose: false
-
     });
     let week = this.data.week;
     let selectedWeek = '';
@@ -274,7 +273,6 @@ Page({
   },
 
   submitform(e) {
-    console.log(e);
     let data = {
       course: e.detail.value['reminder-content'],
       mark: e.detail.value['reminder-mark'],
@@ -283,7 +281,7 @@ Page({
       time: this.data.selectedTime,
       week: this.data.selectedWeek,
       day: this.data.selectedDay
-    }
+    };
     if (this.data.selectedTime === '未选择时间' || this.data.selectedDay === '未选择星期' || this.data.selectedWeek === '未选择周数') {
       wx.showToast({
         title: "未选择时间/周数",
@@ -316,12 +314,14 @@ Page({
             title: "添加成功",
             icon: 'success',
             duration: 800,
-            mask: true
+            mask: true,
+            success: () => {
+              setTimeout(() =>
+                wx.navigateBack({
+                  delta: 1
+                }), 800);
+            }
           });
-          return;
-          wx.navigateTo({
-            url: '/pages/class/class',
-          })
         } else {
           console.log('add reminder fail');
         }
@@ -331,6 +331,11 @@ Page({
       }
     });
   },
+
+  onPullDownRefresh: function () {
+    this.onLoad();
+  },
+  
   /**
    * 用户点击右上角分享
    */

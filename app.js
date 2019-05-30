@@ -41,6 +41,7 @@ App({
               dataType: 'json',
               success: res => {
                 wx.setStorageSync('nowweek', res.data['nowweek'] ? parseInt(res.data['nowweek']) : 1);
+                console.log(res.data['nowweek'])
               }
             });
           }

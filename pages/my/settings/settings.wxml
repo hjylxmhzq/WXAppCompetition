@@ -15,5 +15,9 @@
       <view>选择当前周数</view>
       <view>第 {{weekArray[weekIndex]}} 周</view>
     </view>
-    </picker>
+  </picker>
+  <navigator url="{{item.url}}" wx:for="{{manageList}}" class="setting">
+    <text>{{item.text}}</text>
+    <image mode="widthFix" src="/icon/arrow.png" class="arrow"></image>
+  </navigator>
 </view>

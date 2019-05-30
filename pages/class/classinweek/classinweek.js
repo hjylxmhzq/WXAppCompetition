@@ -17,6 +17,7 @@ Page({
       return String(index + 1);
     })
   },
+
   getTodayCourses(nowweek, callback) {
     wx.request({
       url: 'http://tony-space.top/wxapi/getclass',
@@ -27,6 +28,7 @@ Page({
       },
       success: function(res) {
         let data = res.data;
+        console.log(data)
         data = data.map(function(course) {
           let week = course['week'].split(';');
           let singleweek = [];
@@ -77,7 +79,6 @@ Page({
 
         let courseData = [];
         let classtotime = wx.getStorageSync('classtotime');
-
         data.forEach(function(course, index) {
           if (course['week'].indexOf(nowweek) !== -1) {
             let c = {
@@ -93,7 +94,7 @@ Page({
             courseData.push(c);
           }
         });
-
+        callback(courseData)
       }
     });
   },
@@ -157,6 +158,10 @@ Page({
       date: dateinweek,
       nowweek
     })
+  },
+
+  onPullDownRefresh: function () {
+    this.onLoad();
   },
 
   /**
