@@ -44,9 +44,6 @@ Page({
     let ds = e.currentTarget.dataset;
     wx.navigateTo({
       url: `addclass/addclass?name=${ds['name']}&duration=${ds['duration']}&mark=${ds['mark']}&place=${ds['place']}&teacher=${ds['teacher']}`,
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
     })
   },
 

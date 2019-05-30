@@ -160,6 +160,13 @@ Page({
     })
   },
 
+  clickClass(e) {
+    let ds = e.currentTarget['dataset'];
+    wx.navigateTo({
+      url: `/pages/class/addclass/addclass?name=${ds['name']}&place=${ds['place']}`,
+    })
+  },
+
   onPullDownRefresh: function () {
     this.onLoad();
   },

@@ -311,3 +311,9 @@ swiper-item>view:nth-child(3) {
   top: 30rpx;
   transform: rotate(45deg);
 }
+
+.share {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+}

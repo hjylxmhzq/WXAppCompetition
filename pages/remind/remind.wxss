@@ -137,3 +137,170 @@ view>image {
   color: #959595;
   padding-bottom: 10rpx;
 }
+
+.add {
+  transition: all 0.5s;
+  height: 80rpx;
+  position: fixed;
+  bottom: 40rpx;
+  right: 30rpx;
+  transform: rotate(45deg);
+}
+
+.close {
+  transition: all 0.5s;
+  height: 80rpx;
+  position: fixed;
+  bottom: 40rpx;
+  right: 30rpx;
+}
+
+.add_list_on {
+  transition: all 0.5s;
+  pointer-events: auto;
+  opacity: 1;
+  position: fixed;
+  bottom: 160rpx;
+  right: 30rpx;
+}
+
+.add_list_off {
+  transition: all 0.5s;
+  position: fixed;
+  opacity: 0;
+  bottom: 60rpx;
+  right: 30rpx;
+  pointer-events: none;
+}
+
+.add_item {
+  position: relative;
+  background-color: #dacdeb;
+  border-radius: 50%;
+  margin-bottom: 10rpx;
+  height: 80rpx;
+  width: 80rpx;
+  background-size: 52rpx 52rpx;
+  background-position: 15rpx 15rpx;
+  box-shadow: 0 0 5px 0 #777;
+  background-repeat: no-repeat;
+}
+
+.add_item:nth-child(1) {
+  background-image: url(http://tony-space.top/static/icon/add_white.png);
+}
+
+.add_item:nth-child(1)::before {
+  content: '添加提醒';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 180rpx;
+  height: 50rpx;
+  left: -200rpx;
+  top: 14rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+.add_item:nth-child(1)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 20rpx;
+  height: 20rpx;
+  left: -30rpx;
+  top: 30rpx;
+  transform: rotate(45deg);
+}
+
+.add_item:nth-child(2) {
+  background-image: url(http://tony-space.top/static/icon/change.png);
+}
+
+.add_item:nth-child(2)::before {
+  content: '本周课程';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 180rpx;
+  height: 50rpx;
+  left: -200rpx;
+  top: 14rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+.add_item:nth-child(2)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 20rpx;
+  height: 20rpx;
+  left: -30rpx;
+  top: 30rpx;
+  transform: rotate(45deg);
+}
+
+.add_item:nth-child(3) {
+  background-image: url(http://tony-space.top/static/icon/trans.png);
+}
+
+.add_item:nth-child(3)::before {
+  content: '分享';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 100rpx;
+  height: 50rpx;
+  left: -120rpx;
+  top: 14rpx;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+.add_item:nth-child(3)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: white;
+  width: 20rpx;
+  height: 20rpx;
+  left: -30rpx;
+  top: 30rpx;
+  transform: rotate(45deg);
+}
+
+.mask_on {
+  transition: all 0.5s;
+  position: absolute;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+}
+
+.mask_off {
+  transition: all 0.5s;
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  top: 0;
+}
+
+.share {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+}

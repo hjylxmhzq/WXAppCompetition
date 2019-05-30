@@ -4,10 +4,40 @@ Page({
    * 页面的初始数据
    */
   data: {
+    addbutton: 'add',
+    mask: 'mask_off',
+    add_list: 'add_list_off',
     firstRemind: {},
     otherRemindArray: []
   },
 
+  add(e) {
+    if (this.data.addbutton === 'add') {
+      this.setData({
+        addbutton: 'close',
+        add_list: 'add_list_on',
+        mask: 'mask_on'
+      });
+    } else {
+      this.setData({
+        mask: 'mask_off',
+        addbutton: 'add',
+        add_list: 'add_list_off'
+      });
+    }
+  },
+
+  addreminder(e) {
+    wx.navigateTo({
+      url: '/pages/remind/addreminder/addreminder',
+    });
+  },
+
+  changeMode() {
+    wx.navigateTo({
+      url: '/pages/class/classinweek/classinweek',
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

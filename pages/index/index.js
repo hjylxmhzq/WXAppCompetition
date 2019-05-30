@@ -94,7 +94,7 @@ Page({
   submitformid(e) {
     console.log(e)
     wx.request({
-      url: 'https://tony-space.top/wxapi/setformid?id='+e.detail.formId,
+      url: 'https://tony-space.top/wxapi/setformid?id=' + e.detail.formId,
       header: {
         'Cookie': "app:sess=" + wx.getStorageSync("session_id")
       },
@@ -200,7 +200,13 @@ Page({
       url: '/pages/remind/addreminder/addreminder',
     });
   },
-  
+
+  toWeekClass(e) {
+    wx.navigateTo({
+      url: '/pages/class/classinweek/classinweek'
+    })
+  },
+
   /**
    * 用户点击右上角分享
    */

@@ -65,7 +65,7 @@
   </view>
   <view class="{{add_list}}">
     <view class="add_item" bindtap="addreminder"></view>
-    <view class="add_item"></view>
-    <view class="add_item"><button open-type='share'></button></view>
+    <view class="add_item" bindtap="toWeekClass"></view>
+    <view class="add_item"><button open-type='share' class="share"></button></view>
   </view>
 </view>
