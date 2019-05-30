@@ -361,12 +361,13 @@ Page({
         place: option['place'],
         teacher: option['teacher'],
         mark: option['mark'],
+        uid: option['uid'],
         fromClass: true,
         buttonText: '添加新课程',
         isOld: true,
-        selectedDay: option['day'],
-        selectedTime: option['time'],
-        selectedWeek: option['week']
+        selectedDay: option['day'] || '',
+        selectedTime: option['time'] || '',
+        selectedWeek: option['week'] || ''
       });
     }
   },

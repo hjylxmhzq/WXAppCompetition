@@ -99,7 +99,7 @@ Page({
           });
 
           let time = course['time'].split(';')[0].split('-');
-          course['time'] = [parseInt(time[0]), parseInt(time[1])];
+          course['time'] = [parseInt(time[0]), time.lemgth>1?parseInt(time[1]):parseInt(time[0])];
           course['week'] = [...new Set(singleweek)];
           course['day'] = [...new Set(singleday)];
           return course;
@@ -107,7 +107,6 @@ Page({
 
         let courseData = [];
         let classtotime = wx.getStorageSync('classtotime')
-        console.log(data);
         data.forEach(function(course, index) {
           if (course['day'].indexOf(today) !== -1 && course['week'].indexOf(nowweek) !== -1) {
             let c = {
