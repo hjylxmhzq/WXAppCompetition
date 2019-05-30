@@ -30,7 +30,7 @@
     <view class="picker-itemright">{{inwayArray[inwayIndex]}}</view>
   </picker>
   <view class="submit-buttons">
-    <button wx:if="{{isOld}}" type="warn" class="submit-button" bindtap='deleteClass'>删除课程</button>
+    <button wx:if="{{isOld}}" type="warn" class="submit-button" bindtap='deleteClass'>删除提醒</button>
     <button form-type="submit" type="primary" class="submit-button">OK</button>
   </view>
 </form>

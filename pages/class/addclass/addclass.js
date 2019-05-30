@@ -333,6 +333,10 @@ Page({
     });
   },
 
+  onShow() {
+    this.onLoad();
+  },
+
   onPullDownRefresh: function() {
     this.onLoad();
   },
@@ -348,17 +352,49 @@ Page({
   },
 
   onLoad(option) {
-    if (option['name']) {
+    console.log(option)
+    if (option && option['name']) {
+      for (let key in option) {
+        option[key] = decodeURIComponent(option[key]);
+      }
       this.setData({
-        ...option,
+        place: option['place'],
+        teacher: option['teacher'],
+        mark: option['mark'],
+        uid: option['uid'],
         fromClass: true,
-        buttonText: '修改课程',
-        isOld: true
+        isOld: true,
+        buttonText: '添加新课程',
+        selectedDay: option['day'] || '',
+        selectedTime: option['time'] || '',
+        selectedWeek: option['week'] || ''
       });
     }
   },
 
-  deleteClass: function(e) {
-
+  deleteClass: function (e) {
+    let uid = this.data.uid;
+    let data = {
+      uid
+    }
+    wx.request({
+      url: 'http://tony-space.top/wxapi/removeclass',
+      data,
+      method: 'POST',
+      header: {
+        'content-Type': 'application/x-www-form-urlencoded',
+        'Cookie': "app:sess=" + wx.getStorageSync("session_id")
+      },
+      success: function () {
+        wx.showToast({
+          title: '已删除课程',
+          icon: 'success',
+          duration: 800
+        });
+        setTimeout(() => {
+          wx.navigateBack();
+        }, 800);
+      }
+    });
   }
 })

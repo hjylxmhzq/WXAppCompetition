@@ -31,6 +31,7 @@ Page({
         console.log(data)
         data = data.map(function(course) {
           let week = course['week'].split(';');
+          course['weekstr'] = week;
           let singleweek = [];
 
           week = week.slice(0, week.length - 1);
@@ -51,6 +52,7 @@ Page({
 
           course['week'] = [...new Set(singleweek)];
           let day = course['day'];
+          course['daystr'] = day;
           day = day.substr(2).split('; ');
           let singleday = [];
 
@@ -89,8 +91,14 @@ Page({
               duration: course['time'].length > 1 ? classtotime[course['time'][0] - 1][0] + '至' + classtotime[course['time'][1] - 1][1] : classtotime[course['time'][0] - 1][0],
               teacher: course['teacher'],
               place: course['place'],
-              mark: course['mark']
+              mark: course['mark'],
+              week: course['week'],
+              daystr: course['daystr'],
+              weekstr: course['weekstr'],
+              uid: course['uniqueid']
             }
+            console.log(c)
+
             courseData.push(c);
           }
         });
@@ -107,17 +115,18 @@ Page({
         let day = courseData[i]['day'][y];
         if (day > 5)
           continue;
-        course[day - 1][courseData[i]['fromClass'] - 1] = {
-          name: courseData[i]['courseName'],
-          place: !!courseData[i]['place'] ? courseData[i]['place'] : '未设置地点'
-        };
-        course[day - 1][courseData[i]['toClass'] - 1] = {
-          name: courseData[i]['courseName'],
-          place: !!courseData[i]['place'] ? courseData[i]['place'] : '未设置地点'
+        for (let fromc = courseData[i]['fromClass'] - 1; fromc <= courseData[i]['toClass']-1; fromc++){
+          course[day - 1][fromc] = {
+            ...courseData[i],
+            name: courseData[i]['courseName'],
+            place: !!courseData[i]['place'] ? courseData[i]['place'] : '未设置地点',
+            weekstr: courseData[i]['weekstr'].join(';'),
+            time: courseData[i]['duration']
+          };
         }
       }
     }
-
+  console.log(course);
     this.setData({
       course
     });
@@ -162,8 +171,12 @@ Page({
 
   clickClass(e) {
     let ds = e.currentTarget['dataset'];
+    for (let key in ds) {
+      ds[key] = encodeURIComponent(ds[key]);
+    }
+    let url = `/pages/class/addclass/addclass?name=${ds['name']}&place=${ds['place']}&week=${ds['week']}&uid=${ds['uid']}&day=${ds['day']}&time=${ds['time']}&mark=${ds['mark']}&teacher=${ds['teacher']}`;
     wx.navigateTo({
-      url: `/pages/class/addclass/addclass?name=${ds['name']}&place=${ds['place']}`,
+      url
     })
   },
 

@@ -93,6 +93,11 @@ Page({
   },
 
   submitformid(e) {
+    this.setData({
+      mask: 'mask_off',
+      addbutton: 'add',
+      add_list: 'add_list_off'
+    });
     console.log(e)
     wx.request({
       url: 'https://tony-space.top/wxapi/setformid?id=' + e.detail.formId,

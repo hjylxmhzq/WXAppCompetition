@@ -43,7 +43,7 @@ Page({
     console.log(e);
     let ds = e.currentTarget.dataset;
     wx.navigateTo({
-      url: `addclass/addclass?name=${ds['name']}&duration=${ds['duration']}&mark=${ds['mark']}&place=${ds['place']}&teacher=${ds['teacher']}`,
+      url: `addclass/addclass?name=${ds['name']}&duration=${ds['duration']}&mark=${ds['mark']}&place=${ds['place']}&teacher=${ds['teacher']}&uid=${ds['uid']}`
     })
   },
 
@@ -138,11 +138,18 @@ Page({
 
     function callback(courseData) {
       console.log(courseData);
+      courseData.sort((a, b) => {
+        return a['fromClass'] - b['fromClass'];
+      })
       that.setData({
         courseData
       });
     }
     this.getTodayCourses(today, nowweek, callback);
+  },
+
+  onShow() {
+    this.onLoad();
   },
 
   onPullDownRefresh: function() {
