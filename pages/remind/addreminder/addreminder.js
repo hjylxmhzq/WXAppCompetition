@@ -72,27 +72,11 @@ Page({
       }
     });
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
-
-
-
-
-
-    //todo
-    if (options['time']) {
-      this.setData({
-        isOld: true
-      });
-    }
-
-
-
-
-
     let that = this;
     wx.request({
       url: 'http://tony-space.top/wxapi/getclass',
@@ -110,13 +94,18 @@ Page({
         courseArray = [...new Set(courseArray)];
         for (let c in courseArray) {
           if (courseArray[c] === options['course']) {
-            that.setData({courseIndex: c});
+            that.setData({
+              courseIndex: c
+            });
             break;
           }
         }
-        console.log(options)
+
         if (options['date']) {
-          that.setData({buttonText: '修改提醒'});
+          that.setData({
+            buttonText: '修改提醒',
+            isOld: true
+          });
         }
         that.setData({
           courseArray,
@@ -124,7 +113,6 @@ Page({
         });
       }
     });
-
   },
 
   /**
