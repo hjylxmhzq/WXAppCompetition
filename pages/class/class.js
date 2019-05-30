@@ -43,7 +43,7 @@ Page({
     console.log(e);
     let ds = e.currentTarget.dataset;
     wx.navigateTo({
-      url: `addclass/addclass?name=${ds['name']}&duration=${ds['duration']}&mark=${ds['mark']}&place=${ds['place']}&teacher=${ds['teacher']}`,
+      url: `addclass/addclass?name=${ds['name']}&duration=${ds['duration']}&mark=${ds['mark']}&place=${ds['place']}&teacher=${ds['teacher']}&uid=${ds['uid']}`
     })
   },
 

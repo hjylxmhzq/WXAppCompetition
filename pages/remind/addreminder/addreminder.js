@@ -126,6 +126,28 @@ Page({
   },
 
   deleteClass: function(e) {
-
+    let uid = this.data.uid;
+    let data = {
+      uid
+    }
+    wx.request({
+      url: 'http://tony-space.top/wxapi/removereminder',
+      data,
+      method: 'POST',
+      header: {
+        'content-Type': 'application/x-www-form-urlencoded',
+        'Cookie': "app:sess=" + wx.getStorageSync("session_id")
+      },
+      success: function() {
+        wx.showToast({
+          title: '已删除提醒',
+          icon: 'success',
+          duration: 800
+        });
+        setTimeout(()=>{
+          wx.navigateBack();
+        }, 800)
+      }
+    })
   }
 })

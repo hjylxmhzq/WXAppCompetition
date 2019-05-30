@@ -79,8 +79,8 @@ Page({
         console.log(data)
 
         let d = data.map(function(item) {
-          let daylist = ['一', '二', '三', '四', '五', '六', '日']
-          let day = daylist[(new Date(item['remind_date'] + ' ' + item['remind_time']).getDay() - 1)];
+          let daylist = ['日','一', '二', '三', '四', '五', '六']
+          let day = daylist[(new Date(item['remind_date'] + ' ' + item['remind_time']).getDay())];
           return {
             date: item['remind_date'].split('-')[1] + '月' + item['remind_date'].split('-')[2] + '日',
             day: '星期' + day,
@@ -88,7 +88,8 @@ Page({
             course: item['type'] || '未关联课程',
             content: item['content'] || '暂无内容',
             mark: item['mark'] || '暂无备忘',
-            uid: item['uniqueid']
+            uid: item['uniqueid'],
+            url: `/pages/remind/addreminder/addreminder?date=${item['remind_date']}&day=星期${day};&time=${item['remind_time']}&course=${item['type']}&content=${item['content']}&mark=${item['mark']}&uid=${item['uniqueid']}`
           }
         });
 
@@ -110,6 +111,10 @@ Page({
         console.log('request reminder data fail');
       }
     });
+  },
+
+  onShow() {
+    this.onLoad();
   },
 
   onPullDownRefresh: function () {

@@ -206,12 +206,12 @@ swiper-item>navigator>view:nth-child(3) {
 .mask_on {
   transition: all 0.5s;
   position: fixed;
-  pointer-events: none;
-  z-index: 1;
   opacity: 0.8;
   width: 100%;
   height: 100%;
+  z-index: 1;
   background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
 }
 
 .mask_off {
