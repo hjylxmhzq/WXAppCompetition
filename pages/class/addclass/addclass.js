@@ -352,7 +352,7 @@ Page({
   },
 
   onLoad(option) {
-
+    console.log(option)
     if (option && option['name']) {
       for (let key in option) {
         option[key] = decodeURIComponent(option[key]);
@@ -363,8 +363,8 @@ Page({
         mark: option['mark'],
         uid: option['uid'],
         fromClass: true,
-        buttonText: '添加新课程',
         isOld: true,
+        buttonText: '添加新课程',
         selectedDay: option['day'] || '',
         selectedTime: option['time'] || '',
         selectedWeek: option['week'] || ''
@@ -387,14 +387,14 @@ Page({
       },
       success: function () {
         wx.showToast({
-          title: '已删除提醒',
+          title: '已删除课程',
           icon: 'success',
           duration: 800
         });
         setTimeout(() => {
           wx.navigateBack();
-        }, 800)
+        }, 800);
       }
-    })
+    });
   }
 })

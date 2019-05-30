@@ -39,7 +39,7 @@ Page({
     });
   },
 
-  clickCard(e){
+  clickCard(e) {
     console.log(e);
     let ds = e.currentTarget.dataset;
     wx.navigateTo({
@@ -136,11 +136,19 @@ Page({
     let nowweek = wx.getStorageSync('nowweek');
 
     function callback(courseData) {
+      console.log(courseData);
+      courseData.sort((a, b) => {
+        return a['fromClass'] - b['fromClass'];
+      })
       that.setData({
         courseData
       });
     }
     this.getTodayCourses(today, nowweek, callback);
+  },
+
+  onShow() {
+    this.onLoad();
   },
 
   onPullDownRefresh: function() {

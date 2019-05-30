@@ -6,7 +6,7 @@ page {
                 linear-gradient(315deg, #eceddc 25%, transparent 25%),
                 linear-gradient(45deg, #eceddc 25%, transparent 25%);
   background-size: 100px 100px;
-  background-color: rgb(255, 172, 172);
+  background-color: rgb(252, 204, 204);
 }
 
 .page {
@@ -14,69 +14,80 @@ page {
   height: 750rpx;
 }
 
-.number {
-  width: 8%;
-  margin-left: 3%;
-  vertical-align: top;
-}
-
-.number > view {
-  line-height: 125rpx;
-}
-
 .outerbox {
-  margin: 40rpx 0;
-  height: 250rpx;
-  font-size: 28rpx;
+  display: flex;
+  height: 240rpx;
+  width: 90%;
+  margin: 20rpx auto;
 }
 
-.outerbox > view:nth-child(1) {
-  display: inline-block;
-  height: 250rpx;
+.number {
+  width: 10%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.course_card {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  background: #efefef;
-  box-shadow: 0 0 10px 0 #aaa;
-  width: 85%;
-  height: 250rpx;
+.number view {
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.today-class {
+  border: solid 1px #888;
   border-radius: 20rpx;
-}
-
-.course_card > view {
-  width: 220rpx;
-  text-align: left;
-  padding-left: 50rpx;
-  background-repeat: no-repeat;
-  background-size: 18px 18px;
-  background-position: 4px 3px;
-  overflow: hidden;
-}
-
-.course_card > view:nth-child(1) {
+  background-color: #f8f4dfcc;
   width: 100%;
-  padding-top: 30rpx;
-  padding-left: 80rpx;
-  text-align: left;
 }
 
-.course_duration {
-  background-image: url(http://tony-space.top/static/icon/time_blue.png);
+.class-name {
+  width: 70%;
+  margin: 20rpx auto 10rpx;
+  font-size: 36rpx;
 }
 
-.course_teacher {
-  background-image: url(http://tony-space.top/static/icon/lecturer.png);
+.class-name text {
+  position: relative;
+  z-index: 0;
 }
 
-.course_place {
-  background-image: url(http://tony-space.top/static/icon/locale.png);
+.class-name text::before {
+  content: "";
+  width: calc(100% + 30rpx);
+  height: 20rpx;
+  display: block;
+  position: absolute;
+  top: 30rpx;
+  left: -10rpx;
+  background: #62d7f899;
+  border-radius: 10rpx;
+  z-index: -1;
 }
 
-.course_mark {
-  background-image: url(http://tony-space.top/static/icon/subject.png);
+.class-info {
+  width: 80%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30rpx auto 0;
+}
+
+.class-info view {
+  width: 48%;
+  color: #555;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.class-info image {
+  width: 35rpx;
+  margin-right: 10rpx;
 }
 
 .add {
@@ -103,6 +114,7 @@ page {
   position: fixed;
   bottom: 160rpx;
   right: 30rpx;
+  z-index: 3;
 }
 
 .add_list_off {
@@ -228,6 +240,7 @@ page {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
+  z-index: 2;
 }
 
 .mask_off {
@@ -238,6 +251,7 @@ page {
   height: 100%;
   opacity: 0;
   top: 0;
+  z-index: 2;
 }
 
 .noclass {
@@ -245,4 +259,12 @@ page {
   font-size: 28rpx;
   line-height: 100px;
   color: #888;
+}
+
+.share {
+  width: 80rpx;
+  height: 80rpx;
+  background-color: transparent;
+  border-radius: 50%;
+  border-color: #ffffffff;
 }

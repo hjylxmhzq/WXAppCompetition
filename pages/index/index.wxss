@@ -313,7 +313,9 @@ swiper-item>navigator>view:nth-child(3) {
 }
 
 .share {
-  width: 40px;
-  height: 40px;
+  width: 80rpx;
+  height: 80rpx;
   background-color: transparent;
+  border-radius: 50%;
+  border-color: #ffffffff;
 }
