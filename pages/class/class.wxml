@@ -3,25 +3,35 @@
 <view wx:if="{{courseData.length === 0}}">
   <view class="noclass">今天暂无课程</view>
 </view>
-<view wx:for="{{courseData}}" wx:key="unique">
-  <view class="outerbox">
-    <view class="number">
-      <view>{{item.fromClass}}</view>
-      <view>{{item.toClass}}</view>
+<view wx:for="{{courseData}}" wx:key="" class="outerbox">
+  <view class="number">
+    <view>{{item.fromClass}}</view>
+    <view>{{item.toClass}}</view>
+  </view>
+  <view class="today-class" bindtap='clickCard' data-name='{{item.courseName}}' data-duration='{{item.duration}}' data-teacher='{{item.teacher}}' data-place='{{item.place}}' data-mark='{{item.mark}}' data-uid='{{item.uid}}'>
+    <view class="class-name">
+      <text>{{item.courseName}}</text>
     </view>
-    <view class="course_card" bindtap='clickCard' 
-    data-name='{{item.courseName}}'
-    data-duration='{{item.duration}}'
-    data-teacher='{{item.teacher}}'
-    data-place='{{item.teacher}}'
-    data-mark='{{item.mark}}'
-    data-uid='{{item.uid}}'
-    >
-      <view class="course_name">{{item.courseName}}</view>
-      <view class="course_duration">{{item.duration}}</view>
-      <view class="course_teacher">{{item.teacher}}</view>
-      <view class="course_place">{{item.place}}</view>
-      <view class="course_mark">{{item.mark}}</view>
+    <view class="class-info">
+      <view>
+        <image mode="widthFix" src="/icon/time_blue.png"></image>
+        <text>{{item.duration}}</text>
+      </view>
+      <view>
+        <image mode="widthFix" src="/icon/lecturer.png"></image>
+        <text wx:if="{{item.teacher}}">{{item.teacher}}</text>
+        <text wx:else>未知教师</text>
+      </view>
+      <view>
+        <image mode="widthFix" src="/icon/place.png"></image>
+        <text wx:if="{{item.place}}">{{item.place}}</text>
+        <text wx:else>未知地点</text>
+      </view>
+      <view>
+        <image mode="widthFix" src="/icon/remark_blue.png"></image>
+        <text wx:if="{{item.mark}}">{{item.mark}}</text>
+        <text wx:else>暂无备注</text>
+      </view>
     </view>
   </view>
 </view>
@@ -31,5 +41,7 @@
 <view class="{{add_list}}">
   <view class="add_item" bindtap="addclass"></view>
   <view class="add_item" bindtap="changeMode"></view>
-  <view class="add_item"></view>
+  <view class="add_item">
+    <button open-type='share' class="share"></button>
+  </view>
 </view>

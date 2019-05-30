@@ -39,7 +39,7 @@ Page({
     });
   },
 
-  clickCard(e){
+  clickCard(e) {
     console.log(e);
     let ds = e.currentTarget.dataset;
     wx.navigateTo({
@@ -137,6 +137,7 @@ Page({
     let nowweek = wx.getStorageSync('nowweek');
 
     function callback(courseData) {
+      console.log(courseData);
       that.setData({
         courseData
       });

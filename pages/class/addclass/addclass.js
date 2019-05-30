@@ -353,7 +353,7 @@ Page({
         ...option,
         fromClass: true,
         buttonText: '修改课程',
-        isOld: false
+        isOld: true
       });
     }
   },
