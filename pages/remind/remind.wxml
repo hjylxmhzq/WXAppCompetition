@@ -29,7 +29,15 @@
 </view>
 <view class="near-remind-split">近期提醒</view>
 
-<view wx:for="{{otherRemindArray}}" wx:key="" class="secondary-card">
+<view wx:for="{{otherRemindArray}}" wx:key="" class="secondary-card"
+data-date='{{item.date}}'
+data-content='{{item.day}}'
+data-content='{{item.content}}'
+data-course='{{item.course}}'
+data-time='{{item.time}}'
+data-mark='{{item.mark}}'
+bindtap='clickCard'
+>
   <view class="secondary-card-title">
     <view>
       <image mode="widthFix" src="/icon/calendar_black.png"></image>

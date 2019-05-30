@@ -9,6 +9,8 @@ Page({
     date: '2019-01-01',
     courseArray: [],
     courseIndex: 1,
+    content: '',
+    mark: '',
     inwayIndex: 0,
     inwayArray: ['微信', '无']
   },
@@ -88,11 +90,23 @@ Page({
           courseArray.push(c['coursename']);
         }
         courseArray = [...new Set(courseArray)];
+        for (let c in courseArray) {
+          if (courseArray[c] === options['course']) {
+            that.setData({courseIndex: c});
+            break;
+          }
+        }
+        console.log(options)
+        if (options['date']) {
+          that.setData({buttonText: '修改提醒'});
+        }
         that.setData({
-          courseArray
+          courseArray,
+          ...options
         });
       }
     });
+
   },
 
   /**

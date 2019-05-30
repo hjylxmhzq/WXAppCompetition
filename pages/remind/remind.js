@@ -6,6 +6,7 @@ Page({
   data: {
     addbutton: 'add',
     mask: 'mask_off',
+    buttonText: 'OK',
     add_list: 'add_list_off',
     firstRemind: {},
     otherRemindArray: []
@@ -31,6 +32,13 @@ Page({
     wx.navigateTo({
       url: '/pages/remind/addreminder/addreminder',
     });
+  },
+
+  clickCard(e) {
+    let ds = e.currentTarget['dataset'];
+    wx.navigateTo({
+      url: `/pages/remind/addreminder/addreminder?date=${ds['date']}&day=${ds['day']}&content=${ds['content']}&course=${ds['course']}&time=${ds['time']}&mark=${ds['mark']}`,
+    })
   },
 
   changeMode() {
@@ -72,6 +80,7 @@ Page({
 
         let d = data.map(function(item) {
           let daylist = ['一', '二', '三', '四', '五', '六', '日']
+          console.log(item)
           let day = daylist[(new Date(item['remind_date'] + ' ' + item['remind_time']).getDay() - 1)];
           return {
             date: item['remind_date'].split('-')[1] + '月' + item['remind_date'].split('-')[2] + '日',
@@ -92,7 +101,7 @@ Page({
           content: '还未设置提醒',
           mark: '还未设置提醒'
         }
-
+        console.log(d)
         that.setData({
           firstRemind: d.length > 0 ? d[0] : defaultDate,
           otherRemindArray: d.slice(1)
