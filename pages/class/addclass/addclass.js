@@ -16,6 +16,7 @@ Page({
     showClassChoose: false,
     showWeekChoose: false,
     showDayChoose: false,
+    isOld: false,
     time: '00:00',
     date: '2019-01-01',
     courseArray: [],
@@ -332,10 +333,10 @@ Page({
     });
   },
 
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     this.onLoad();
   },
-  
+
   /**
    * 用户点击右上角分享
    */
@@ -345,9 +346,19 @@ Page({
       path: "/pages/index/index?fromUserId=" + wx.getStorageSync('session_id'),
     };
   },
+
   onLoad(option) {
     if (option['name']) {
-      this.setData({...option, fromClass: true, buttonText: '修改课程'});
+      this.setData({
+        ...option,
+        fromClass: true,
+        buttonText: '修改课程',
+        isOld: false
+      });
     }
+  },
+
+  deleteClass: function(e) {
+
   }
 })

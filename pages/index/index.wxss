@@ -46,17 +46,17 @@ swiper {
   flex-grow: 1;
 }
 
-swiper-item>view view {
+swiper-item>navigator view {
   display: flex;
   align-items: center;
 }
 
-swiper-item>view image {
+swiper-item>navigator image {
   width: 30rpx;
   margin-right: 10rpx;
 }
 
-swiper-item>view:nth-child(1) {
+swiper-item>navigator>view:nth-child(1) {
   width: 70%;
   margin: 40rpx auto;
   font-size: 28rpx;
@@ -65,13 +65,12 @@ swiper-item>view:nth-child(1) {
   align-items: center;
 }
 
-swiper-item>view:nth-child(2) {
+swiper-item>navigator>view:nth-child(2) {
   font-size: 40rpx;
-  margin: 0 auto;
-  text-align: center;
+  justify-content: center;
 }
 
-swiper-item>view:nth-child(3) {
+swiper-item>navigator>view:nth-child(3) {
   font-size: 28rpx;
   margin: 40rpx auto 0;
   display: flex;
@@ -191,6 +190,7 @@ swiper-item>view:nth-child(3) {
   background-position: 15rpx 15rpx;
   background-repeat: no-repeat;
 }
+
 .add_item:nth-child(1) {
   background-image: url(http://tony-space.top/static/icon/add_white.png);
 }

@@ -113,6 +113,24 @@ view>image {
   font-size: 36rpx;
 }
 
+.secondary-card>view:nth-child(3) text {
+  z-index: 0;
+  position: relative;
+}
+
+.secondary-card>view:nth-child(3) text::before {
+  content: "";
+  width: calc(100% + 30rpx);
+  height: 20rpx;
+  display: block;
+  position: absolute;
+  top: 30rpx;
+  left: -10rpx;
+  background: #62d7f899;
+  border-radius: 10rpx;
+  z-index: -1;
+}
+
 .secondary-card>view:nth-child(4) {
   width: 70%;
   margin: 0 auto;

@@ -12,7 +12,8 @@ Page({
     content: '',
     mark: '',
     inwayIndex: 0,
-    inwayArray: ['微信', '无']
+    inwayArray: ['微信', '无'],
+    isOld: false
   },
 
   bindPickerChange(e) {
@@ -75,6 +76,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+
+
+
+
+
+
+    //todo
+    if (options['time']) {
+      this.setData({
+        isOld: true
+      });
+    }
+
+
+
+
+
     let that = this;
     wx.request({
       url: 'http://tony-space.top/wxapi/getclass',
@@ -117,5 +135,9 @@ Page({
       title: "有个课程表",
       path: "/pages/index/index?fromUserId=" + wx.getStorageSync('session_id'),
     };
+  },
+
+  deleteClass: function(e) {
+
   }
 })

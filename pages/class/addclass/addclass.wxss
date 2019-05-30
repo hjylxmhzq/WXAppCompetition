@@ -1,7 +1,7 @@
 /* pages/remind/addreminder/addreminder.wxss */
 
 page {
-    background: radial-gradient(#aaaaaa88 3px, transparent 4px),
+  background: radial-gradient(#aaaaaa88 3px, transparent 4px),
                 radial-gradient(#aaaaaa88 3px, transparent 4px),
                 linear-gradient(#fff 4px, transparent 0),
                 linear-gradient(45deg, transparent 74px, transparent 75px, #cccccc88 75px, #cccccc88 76px, transparent 77px, transparent 109px),
@@ -37,7 +37,6 @@ page {
   margin: 10px 5px 0 80px;
   vertical-align: middle;
   position: absolute;
-
 }
 
 .cancel-img {
@@ -104,9 +103,9 @@ page {
 }
 
 .picker {
-  font-size:14px;
-  padding:15px;
-  height:14px;
+  font-size: 14px;
+  padding: 15px;
+  height: 14px;
 }
 
 .picker-itemleft {
@@ -122,11 +121,15 @@ page {
   padding-right: 20px;
 }
 
-.submit-button {
+.submit-buttons {
   width: 90%;
   left: 5%;
   position: absolute;
   bottom: 15px;
+}
+
+.submit-button{
+  margin-top: 20rpx;
 }
 
 .class_choose_bar {
@@ -194,7 +197,7 @@ page {
   position: absolute;
   top: 0;
   background-color: #ccc;
-  z-index: 3; 
+  z-index: 3;
   opacity: 0.6;
 }
 
@@ -206,7 +209,7 @@ page {
   top: 0;
   background-color: #ccc;
   pointer-events: none;
-  z-index: 3; 
+  z-index: 3;
   opacity: 0;
 }
 

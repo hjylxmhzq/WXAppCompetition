@@ -80,7 +80,6 @@ Page({
 
         let d = data.map(function(item) {
           let daylist = ['一', '二', '三', '四', '五', '六', '日']
-          console.log(item)
           let day = daylist[(new Date(item['remind_date'] + ' ' + item['remind_time']).getDay() - 1)];
           return {
             date: item['remind_date'].split('-')[1] + '月' + item['remind_date'].split('-')[2] + '日',
