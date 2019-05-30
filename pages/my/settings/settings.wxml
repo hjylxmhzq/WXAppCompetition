@@ -16,7 +16,7 @@
       <view>第 {{weekArray[weekIndex]}} 周</view>
     </view>
   </picker>
-  <navigator url="{{item.url}}" wx:for="{{manageList}}" class="setting">
+  <navigator url="{{item.url}}" wx:for="{{manageList}}" wx:key="" class="setting">
     <text>{{item.text}}</text>
     <image mode="widthFix" src="/icon/arrow.png" class="arrow"></image>
   </navigator>

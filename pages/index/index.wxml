@@ -2,7 +2,8 @@
 <view class="{{mask}}" bindtap='add'></view>
 
 <form bindsubmit='submitformid' report-submit='true' class="mock">
-<button form-type="submit" class="submitform">Submit</button></form>
+  <button form-type="submit" class="submitform">Submit</button>
+</form>
 <view class="container">
   <view class="today-remind">
     <view class="today-date">
@@ -13,28 +14,30 @@
     <view class="line"></view>
     <swiper wx:if="{{remindList.length}}" indicator-dots="true" indicator-color="#ffffff33" indicator-active-color="#fff" autoplay="true">
       <swiper-item wx:for="{{remindList}}" wx:key="">
-        <view>
+        <navigator url="{{item.url}}">
           <view>
-            <image mode="widthFix" src="/icon/course.png"></image>
-            <text wx:if="{{item.course}}">{{item.course}}</text>
-            <text wx:else style="color:#ffffff99">未关联课程</text>
+            <view>
+              <image mode="widthFix" src="/icon/course.png"></image>
+              <text wx:if="{{item.course}}">{{item.course}}</text>
+              <text wx:else style="color:#ffffff99">未关联课程</text>
+            </view>
+            <view>
+              <image mode="widthFix" src="/icon/time.png"></image>
+              <text>{{item.remind_date}} {{item.time}}</text>
+            </view>
           </view>
+          <view>{{item.content}}</view>
           <view>
-            <image mode="widthFix" src="/icon/time.png"></image>
-            <text>{{item.time}}</text>
+            <image mode="widthFix" src="/icon/remark.png"></image>
+            <text>备注：{{item.mark}}</text>
           </view>
-        </view>
-        <view>{{item.content}}</view>
-        <view>
-          <image mode="widthFix" src="/icon/remark.png"></image>
-          <text>备注：{{item.mark}}</text>
-        </view>
+        </navigator>
       </swiper-item>
     </swiper>
     <view wx:else class="no-remind" style="color:#ffffff99">近期暂无提醒</view>
   </view>
   <view class="today-class-split">在此查看今日课程</view>
-  <view wx:for="{{todayClassesList}}" wx:key="" class="today-class">
+  <navigator wx:for="{{todayClassesList}}" wx:key="" class="today-class" url="{{item.url}}">
     <view class="class-name">
       <text>{{item.courseName}}</text>
     </view>
@@ -59,13 +62,15 @@
         <text wx:else>暂无备注</text>
       </view>
     </view>
-  </view>
+  </navigator>
   <view class="{{addbutton}}">
     <icon type="clear" size="40" color="rgb(100,100,100)" bindtap='add'></icon>
   </view>
   <view class="{{add_list}}">
     <view class="add_item" bindtap="addreminder"></view>
     <view class="add_item" bindtap="toWeekClass"></view>
-    <view class="add_item"><button open-type='share' class="share"></button></view>
+    <view class="add_item">
+      <button open-type='share' class="share"></button>
+    </view>
   </view>
 </view>

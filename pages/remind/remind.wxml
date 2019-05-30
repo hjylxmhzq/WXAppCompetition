@@ -1,7 +1,7 @@
 <!--pages/remind/remind.wxml-->
 <view class="{{mask}}" bindtap='add'></view>
 
-<view class="card">
+<navigator url="{{firstRemind.url}}" class="card">
   <view class="card-title">
     <view>
       <image mode="widthFix" src="/icon/calendar.png"></image>
@@ -26,10 +26,9 @@
     <image mode="widthFix" src="/icon/remark.png"></image>
     <text>{{firstRemind.mark}}</text>
   </view>
-</view>
+</navigator>
 <view class="near-remind-split">近期提醒</view>
-
-<view wx:for="{{otherRemindArray}}" wx:key="" class="secondary-card">
+<navigator wx:for="{{otherRemindArray}}" wx:key="" class="secondary-card" url="{{item.url}}">
   <view class="secondary-card-title">
     <view>
       <image mode="widthFix" src="/icon/calendar_black.png"></image>
@@ -38,7 +37,9 @@
     <view>{{item.day}}</view>
   </view>
   <view class="line"></view>
-  <view>{{item.content}}</view>
+  <view>
+    <text>{{item.content}}</text>
+  </view>
   <view>
     <view>
       <image mode="widthFix" src="/icon/coursename.png"></image>
@@ -53,7 +54,7 @@
     <image mode="widthFix" src="/icon/remark_black.png"></image>
     <text>{{item.mark}}</text>
   </view>
-</view>
+</navigator>
 <view class="{{addbutton}}">
   <icon type="clear" size="40" color="rgb(100,100,100)" bindtap='add'></icon>
 </view>

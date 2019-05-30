@@ -29,5 +29,8 @@
     <view class="picker-itemleft">提醒方式</view>
     <view class="picker-itemright">{{inwayArray[inwayIndex]}}</view>
   </picker>
-  <button form-type="submit" type="primary" class="submit-button">OK</button>
+  <view class="submit-buttons">
+    <button wx:if="{{isOld}}" type="warn" class="submit-button" bindtap='deleteClass'>删除课程</button>
+    <button form-type="submit" type="primary" class="submit-button">OK</button>
+  </view>
 </form>

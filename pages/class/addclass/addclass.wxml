@@ -20,7 +20,10 @@
     <text class="lecturer-text">教师</text>
   </view>
   <input name="content" placeholder='如：李老师' class="content-input" name="reminder-teacher" value='{{teacher}}'></input>
-  <button form-type="submit" type="primary" class="submit-button">{{buttonText}}</button>
+  <view class="submit-buttons">
+    <button wx:if="{{isOld}}" type="warn" class="submit-button" bindtap='deleteClass'>删除课程</button>
+    <button form-type="submit" type="primary" class="submit-button">{{buttonText}}</button>
+  </view>
   <view class="content-title"></view>
   <view class="class_choose_bar" bindtap='chooseTime'>
     <view>上课时间</view>
@@ -40,7 +43,6 @@
         <radio value="{{item.name}}" data-index="{{index}}" checked="{{item.checked}}" bindtap='changeTime' /> {{item.name}}
       </label>
       <button type="primary" class="comfirm-button" bindtap='comfirmTime'>OK</button>
-
     </view>
   </view>
   <view wx:if="{{showDayChoose}}">
@@ -49,7 +51,6 @@
         <radio value="{{item.name}}" data-index="{{index}}" checked="{{item.checked}}" bindtap='changeDay' /> {{item.name}}
       </label>
       <button type="primary" class="comfirm-button" bindtap='comfirmDay'>OK</button>
-
     </view>
   </view>
   <view wx:if="{{showWeekChoose}}">
@@ -58,7 +59,6 @@
         <radio value="{{item.name}}" data-index="{{index}}" checked="{{item.checked}}" bindtap='changeWeek' /> {{item.name}}
       </label>
       <button type="primary" class="comfirm-button" bindtap='comfirmWeek'>OK</button>
-
     </view>
   </view>
 </form>
