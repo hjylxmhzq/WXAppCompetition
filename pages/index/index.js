@@ -202,7 +202,12 @@ Page({
       url: '/pages/class/classinweek/classinweek'
     })
   },
-
+  
+  onPullDownRefresh: function() {
+    this.onLoad();
+    wx.stopPullDownRefresh();
+  },
+  
   onShareAppMessage: function() {
     return {
       title: "某课程表",

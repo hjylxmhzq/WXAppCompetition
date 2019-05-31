@@ -143,6 +143,7 @@ Page({
 
   onPullDownRefresh: function() {
     this.onLoad();
+    wx.stopPullDownRefresh();
   },
 
   onShareAppMessage: function() {

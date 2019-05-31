@@ -106,8 +106,9 @@ Page({
     this.onLoad();
   },
 
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
     this.onLoad();
+    wx.stopPullDownRefresh();
   },
 
   onShareAppMessage: function() {
