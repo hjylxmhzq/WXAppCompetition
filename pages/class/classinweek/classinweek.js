@@ -137,9 +137,10 @@ Page({
     let dateinweek = [];
     for (let i = 0; i < 5; i++) {
       let thatday = new Date(firstday + i * 86400000);
-      let mstr = String(thatday.getMonth() + 1);
-      let dstr = String(thatday.getDate());
+      let mstr = String(thatday.getMonth() + 1),
+          dstr = String(thatday.getDate());
       mstr = ('00' + mstr).substr(-2);
+      dstr = ('00' + dstr).substr(-2);
       dateinweek.push(mstr + '-' + dstr);
     }
     for (let i = 0; i < 5; i++) {
