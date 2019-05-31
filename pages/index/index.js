@@ -76,7 +76,7 @@ Page({
               toClass: course['time'].length > 1 ? course['time'][1] : course['time'][0],
               duration: course['time'].length > 1 ? classtotime[course['time'][0] - 1][0] + '至' + classtotime[course['time'][1] - 1][1] : classtotime[course['time'][0] - 1][0],
               teacher: course['teacher'],
-              place: course['place'],
+              place: course['place'].split(';;')[0],
               mark: course['mark']
             }
             courseData.push(c);
@@ -203,12 +203,12 @@ Page({
       url: '/pages/class/classinweek/classinweek'
     })
   },
-  
+
   onPullDownRefresh: function() {
     this.onLoad();
     wx.stopPullDownRefresh();
   },
-  
+
   onShareAppMessage: function() {
     return {
       title: "某课程表",
