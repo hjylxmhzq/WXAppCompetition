@@ -16,7 +16,7 @@
       <view>第 {{weekArray[weekIndex]}} 周</view>
     </view>
   </picker>
-    <picker bindchange="bindCountPickerChange" value="{{weekcountIndex}}" range="{{weekcountArray}}">
+  <picker bindchange="bindCountPickerChange" value="{{weekcountIndex}}" range="{{weekcountArray}}">
     <view class="setting">
       <view>学期总周数</view>
       <view>共 {{weekcountArray[weekcountIndex]}} 周</view>

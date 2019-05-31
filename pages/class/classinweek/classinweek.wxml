@@ -1,7 +1,13 @@
 <!--pages/class/classinweek/classinweek.wxml-->
 <view class="box">
   <view class="cell col0">
-    <view class="date">第{{nowweek}}周</view>
+    <view class="date">
+      <picker bindchange="bindPickerChange" value="{{nowweek-1}}" range="{{weekArray}}">
+        <view class="setting">
+          <view>第 {{nowweek}} 周</view>
+        </view>
+      </picker>
+    </view>
     <view wx:for="{{classcount}}" wx:key="unique" class="course">{{item}}</view>
   </view>
   <view class="cell col1">

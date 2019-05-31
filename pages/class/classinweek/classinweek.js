@@ -9,6 +9,8 @@ Page({
       [],
       []
     ],
+    init: true,
+    weekArray: new Array(wx.getStorageSync('weekcount')).fill(1).map((item,idx)=>idx+1),
     classcount: new Array(wx.getStorageSync('classcount')).fill(1).map(function(item, index) {
       return String(index + 1);
     })
@@ -123,8 +125,47 @@ Page({
     });
   },
 
+  bindPickerChange(e) {
+    let coursecount = wx.getStorageSync('classcount');
+    let course = this.data.course;
+    let realnowweek = wx.getStorageSync('nowweek'),
+        thatweek = parseInt(e.detail.value)+1,
+        weekdiff = thatweek - realnowweek,
+        today = new Date(+new Date()+weekdiff*604800000);
+    let daydiff = today.getDay() === 0 ? 6: today.getDay() - 1;
+    let firstday = today - daydiff * 86400000;
+    let dateinweek = [];
+    for (let i = 0; i < 5; i++) {
+      let thatday = new Date(firstday + i * 86400000);
+      let mstr = String(thatday.getMonth() + 1);
+      let dstr = String(thatday.getDate());
+      mstr = ('00' + mstr).substr(-2);
+      dateinweek.push(mstr + '-' + dstr);
+    }
+    for (let i = 0; i < 5; i++) {
+      let daycourse = new Array(coursecount).fill(0);
+      daycourse = daycourse.map(function (item, index) {
+        return {
+          name: '',
+          place: ''
+        }
+      })
+      course[i] = daycourse;
+    }
+    this.getTodayCourses(thatweek, this.setDayCourse);
+
+    this.setData({
+      init: false,
+      course,
+      date: dateinweek,
+      nowweek: thatweek
+    });
+  },
+
   onShow: function () {
-    this.onLoad();
+    if (this.data.init) {
+      this.onLoad();
+    }
   },
 
   onLoad: function(options) {
