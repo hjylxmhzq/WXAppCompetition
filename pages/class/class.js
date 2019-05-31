@@ -95,7 +95,6 @@ Page({
           let time = course['time'].split(';')[0].split('-');
 
           course['time'] = [parseInt(time[0]), time.length > 1 ? parseInt(time[1]) : parseInt(time[0])];
-          console.log(course['time']);
 
           course['week'] = [...new Set(singleweek)];
           course['day'] = [...new Set(singleday)];

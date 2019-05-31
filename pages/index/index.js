@@ -209,6 +209,10 @@ Page({
     wx.stopPullDownRefresh();
   },
 
+  onShow: function() {
+    this.onLoad();
+  },
+
   onShareAppMessage: function() {
     return {
       title: "某课程表",

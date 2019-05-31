@@ -92,7 +92,7 @@ Page({
           time: '时间',
           course: '',
           content: '还未设置提醒',
-          mark: '还未设置提醒'
+          mark: '暂无备注'
         };
         that.setData({
           firstRemind: d.length > 0 ? d[0] : defaultDate,

@@ -53,7 +53,6 @@ Page({
       weekcountIndex: e.detail.value
     });
     wx.setStorageSync('weekcount', parseInt(e.detail.value) + 1);
-    console.log(parseInt(e.detail.value) + 1)
     this.onLoad();
   },
 
