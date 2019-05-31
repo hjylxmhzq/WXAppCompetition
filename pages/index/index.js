@@ -19,7 +19,7 @@ Page({
       },
       success: function(res) {
         let data = res.data;
-
+        data = data instanceof Array ? data : [];
         data = data.map(function(course) {
           let week = course['week'].split(';');
           let singleweek = [];
@@ -133,6 +133,8 @@ Page({
       },
       success: function(res) {
         let data = res.data;
+        console.log(data);
+        data = data instanceof Array ? data : [];
         data.sort(function(a, b) {
           a = +new Date(a['remind_date'] + ' ' + a['remind_time']);
           b = +new Date(b['remind_date'] + ' ' + b['remind_time']);

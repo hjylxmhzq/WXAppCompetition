@@ -124,8 +124,8 @@ textarea.content-input {
 .mask_on {
   transition: all 1s;
   width: 100%;
-  height: 100%;
   position: absolute;
+  height: 1000px;
   top: 0;
   background-color: #ccc;
   z-index: 3;
@@ -135,7 +135,7 @@ textarea.content-input {
 .mask_off {
   transition: all 1s;
   width: 100%;
-  height: 100%;
+  height: 1000px;
   position: absolute;
   top: 0;
   background-color: #ccc;
