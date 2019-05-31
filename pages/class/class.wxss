@@ -34,7 +34,7 @@ page {
 .today-class {
   border: solid 1px #888;
   border-radius: 20rpx;
-  background-color: #f8f4dfcc;
+  background-color: #f5f5f5cc;
   width: 100%;
 }
 
