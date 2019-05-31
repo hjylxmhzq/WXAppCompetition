@@ -19,7 +19,6 @@ Page({
       },
       success: function(res) {
         let data = res.data;
-
         data = data.map(function(course) {
           let week = course['week'].split(';');
           let singleweek = [];
@@ -76,7 +75,7 @@ Page({
               toClass: course['time'].length > 1 ? course['time'][1] : course['time'][0],
               duration: course['time'].length > 1 ? classtotime[course['time'][0] - 1][0] + '至' + classtotime[course['time'][1] - 1][1] : classtotime[course['time'][0] - 1][0],
               teacher: course['teacher'],
-              place: course['place'],
+              place: course['place'].split(';;')[0],
               mark: course['mark']
             }
             courseData.push(c);
@@ -133,6 +132,7 @@ Page({
       },
       success: function(res) {
         let data = res.data;
+        data = data instanceof Array ? data : [];
         data.sort(function(a, b) {
           a = +new Date(a['remind_date'] + ' ' + a['remind_time']);
           b = +new Date(b['remind_date'] + ' ' + b['remind_time']);
@@ -202,12 +202,12 @@ Page({
       url: '/pages/class/classinweek/classinweek'
     })
   },
-  
+
   onPullDownRefresh: function() {
     this.onLoad();
     wx.stopPullDownRefresh();
   },
-  
+
   onShareAppMessage: function() {
     return {
       title: "某课程表",
