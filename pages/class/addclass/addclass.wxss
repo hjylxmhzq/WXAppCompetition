@@ -62,7 +62,7 @@ textarea.content-input {
 .submit-buttons {
   width: 90%;
   left: 5%;
-  position: absolute;
+  position: fixed;
   bottom: 30rpx;
 }
 
@@ -91,7 +91,7 @@ textarea.content-input {
 }
 
 .class_time {
-  position: absolute;
+  position: fixed;
   display: flex;
   bottom: 0;
   width: 100%;
@@ -147,4 +147,8 @@ textarea.content-input {
 .comfirm-button {
   width: 90%;
   margin-left: 0;
+}
+
+.bottom_space {
+  height: 300rpx;
 }

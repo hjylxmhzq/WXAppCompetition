@@ -38,7 +38,7 @@ Page({
   clickCard(e) {
     let ds = e.currentTarget.dataset;
     wx.navigateTo({
-      url: `addclass/addclass?name=${ds['name']}&duration=${ds['duration']}&mark=${ds['mark']}&place=${ds['place']}&teacher=${ds['teacher']}&uid=${ds['uid']}`
+      url: `addclass/addclass?name=${ds['name']}&duration=${ds['duration']}&mark=${ds['mark']}&place=${ds['place']}&teacher=${ds['teacher']}&uid=${ds['uid']}&location=${ds['location']}`
     });
   },
 
@@ -109,7 +109,8 @@ Page({
               toClass: course['time'].length > 1 ? course['time'][1] : course['time'][0],
               duration: course['time'].length > 1 ? classtotime[course['time'][0] - 1][0] + '至' + classtotime[course['time'][1] - 1][1] : classtotime[course['time'][0] - 1][0],
               teacher: course['teacher'],
-              place: course['place'],
+              place: course['place'].split(';;')[0],
+              location: course['place'].split(';;').length > 1 ? course['place'].split(';;')[1] : '',
               mark: course['mark'],
               uid: course['uniqueid']
             }

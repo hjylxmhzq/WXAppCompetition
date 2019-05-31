@@ -87,7 +87,8 @@ Page({
               toClass: course['time'].length > 1 ? course['time'][1] : course['time'][0],
               duration: course['time'].length > 1 ? classtotime[course['time'][0] - 1][0] + '至' + classtotime[course['time'][1] - 1][1] : classtotime[course['time'][0] - 1][0],
               teacher: course['teacher'],
-              place: course['place'],
+              place: course['place'].split(';;')[0],
+              location: course['place'].split(';;').length > 1 ? course['place'].split(';;')[1] : '',
               mark: course['mark'],
               week: course['week'],
               daystr: course['daystr'],
@@ -115,7 +116,8 @@ Page({
             name: courseData[i]['courseName'],
             place: !!courseData[i]['place'] ? courseData[i]['place'] : '未设置地点',
             weekstr: courseData[i]['weekstr'].join(';'),
-            time: courseData[i]['duration']
+            time: courseData[i]['duration'],
+            location: courseData[i]['location']
           };
         }
       }
@@ -208,7 +210,7 @@ Page({
     for (let key in ds) {
       ds[key] = encodeURIComponent(ds[key]);
     }
-    let url = `/pages/class/addclass/addclass?name=${ds['name']}&place=${ds['place']}&week=${ds['week']}&uid=${ds['uid']}&day=${ds['day']}&time=${ds['time']}&mark=${ds['mark']}&teacher=${ds['teacher']}`;
+    let url = `/pages/class/addclass/addclass?name=${ds['name']}&place=${ds['place']}&week=${ds['week']}&uid=${ds['uid']}&day=${ds['day']}&time=${ds['time']}&mark=${ds['mark']}&teacher=${ds['teacher']}&location=${ds['location']}`;
     wx.navigateTo({
       url
     });

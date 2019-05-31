@@ -6,9 +6,11 @@ Page({
     buttonText: 'OK',
     name: '',
     duration: '',
-    mark: '',
+    marker: '',
     place: '',
     teacher: '',
+    lng: 113.324520,
+    lat: 23.099994,
     showClassChoose: false,
     showWeekChoose: false,
     showDayChoose: false,
@@ -270,58 +272,67 @@ Page({
   },
 
   submitform(e) {
-    let data = {
-      course: e.detail.value['reminder-content'],
-      mark: e.detail.value['reminder-mark'],
-      place: e.detail.value['reminder-place'],
-      teacher: e.detail.value['reminder-teacher'],
-      time: this.data.selectedTime,
-      week: this.data.selectedWeek,
-      day: this.data.selectedDay
-    };
-    if (this.data.selectedTime === '未选择时间' || this.data.selectedDay === '未选择星期' || this.data.selectedWeek === '未选择周数') {
-      wx.showToast({
-        title: "未选择时间/周数",
-        icon: 'none',
-        duration: 800,
-        mask: true
-      });
-      return;
-    }
-    if (data.course.length === 0) {
-      wx.showToast({
-        title: "未填写课程名称",
-        icon: 'none',
-        duration: 800,
-        mask: true
-      });
-      return;
-    }
-    wx.request({
-      url: 'https://tony-space.top/wxapi/addclass',
-      data,
-      method: 'POST',
-      header: {
-        'content-Type': 'application/x-www-form-urlencoded',
-        'Cookie': "app:sess=" + wx.getStorageSync("session_id")
-      },
-      success: function(res, statusCode) {
-        if (res.statusCode == 201) {
+    this.mapCtx.getCenterLocation({
+      success: (res) => {
+        let lng = res.longitude,
+          lat = res.latitude;
+        let data = {
+          course: e.detail.value['reminder-content'],
+          mark: e.detail.value['reminder-mark'],
+          place: e.detail.value['reminder-place'] + ';;' + lng.toString() + ',' + lat.toString(),
+          teacher: e.detail.value['reminder-teacher'],
+          time: this.data.selectedTime,
+          week: this.data.selectedWeek,
+          day: this.data.selectedDay
+        };
+        if (this.data.selectedTime === '未选择时间' || this.data.selectedDay === '未选择星期' || this.data.selectedWeek === '未选择周数') {
           wx.showToast({
-            title: "添加成功",
-            icon: 'success',
+            title: "未选择时间/周数",
+            icon: 'none',
             duration: 800,
-            mask: true,
-            success: () => {
-              setTimeout(() =>
-                wx.navigateBack({
-                  delta: 1
-                }), 800);
-            }
+            mask: true
           });
+          return;
         }
+        if (data.course.length === 0) {
+          wx.showToast({
+            title: "未填写课程名称",
+            icon: 'none',
+            duration: 800,
+            mask: true
+          });
+          return;
+        }
+        wx.request({
+          url: 'https://tony-space.top/wxapi/addclass',
+          data,
+          method: 'POST',
+          header: {
+            'content-Type': 'application/x-www-form-urlencoded',
+            'Cookie': "app:sess=" + wx.getStorageSync("session_id")
+          },
+          success: function(res, statusCode) {
+            if (res.statusCode == 201) {
+              wx.showToast({
+                title: "添加成功",
+                icon: 'success',
+                duration: 800,
+                mask: true,
+                success: () => {
+                  setTimeout(() =>
+                    wx.navigateBack({
+                      delta: 1
+                    }), 800);
+                }
+              });
+            }
+          }
+        });
       }
-    });
+    })
+
+
+
   },
 
   onShow: function() {
@@ -332,6 +343,27 @@ Page({
     this.onLoad();
   },
 
+  onReady: function(e) {
+    this.mapCtx = wx.createMapContext('map')
+  },
+
+  regionChange() {
+    this.mapCtx.getCenterLocation({
+      success: (res) => {
+        let lng = res.longitude,
+          lat = res.latitude;
+        this.setData({
+          lng,
+          lat,
+          marker: {
+            title: '设置位置',
+            longitude: lng,
+            latitude: lat
+          }
+        });
+      }
+    })
+  },
   /**
    * 用户点击右上角分享
    */
@@ -347,7 +379,18 @@ Page({
       for (let key in option) {
         option[key] = decodeURIComponent(option[key]);
       }
+      (option['location'].length === 0) && (option['location'] = '113.324520,23.099994');
       this.setData({
+        lng: option['location'].split(',')[0],
+        lat: option['location'].split(',')[1],
+        marker: [{
+          id: 0,
+          latitude: parseFloat(option['location'].split(',')[1]),
+          longitude: parseFloat(option['location'].split(',')[0]),
+          width: 20,
+          height: 18,
+          title: '上课位置',
+        }],
         place: option['place'],
         teacher: option['teacher'],
         mark: option['mark'],
@@ -359,6 +402,17 @@ Page({
         selectedTime: option['time'] || '',
         selectedWeek: option['week'] || ''
       });
+    } else {
+      wx.getLocation({
+        success: (res) => {
+          let lat = res.latitude,
+            lng = res.longitude;
+          this.setData({
+            lat,
+            lng
+          });
+        },
+      })
     }
   },
 
