@@ -133,10 +133,6 @@ Page({
       },
       success: function(res) {
         let data = res.data;
-<<<<<<< HEAD
-=======
-        console.log(data);
->>>>>>> bd066cc11a8869d9d7f04bf0e28dc153d6596891
         data = data instanceof Array ? data : [];
         data.sort(function(a, b) {
           a = +new Date(a['remind_date'] + ' ' + a['remind_time']);
