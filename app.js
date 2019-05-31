@@ -4,7 +4,19 @@ App({
     var logs = wx.getStorageSync('logs') || [];
     logs.unshift(Date.now());
     wx.setStorageSync('logs', logs);
-
+    let classtotime = [
+      ['8:00', '8:45'],
+      ['8:55', '9:40'],
+      ['10:00', '10:45'],
+      ['10:55', '11:40'],
+      ['14:20', '15:05'],
+      ['15:15', '16:00'],
+      ['16:20', '17:05'],
+      ['17:15', '18:00']
+    ]
+    wx.setStorageSync('classcount', 8);
+    wx.setStorageSync('classtotime', classtotime);
+    wx.setStorageSync('classtime', ['8:00-9:00', '9:00-10:00', '10:00-11:00', '11:00-12:00', '14:00-16:00', '16:00-18:00', '18:00-20:00', '20:00-21:00']);
     wx.login({
       success: res => {
         wx.request({
@@ -14,20 +26,7 @@ App({
           },
           dataType: 'json',
           success: res => {
-            let classtotime = [
-              ['8:00', '8:45'],
-              ['8:55', '9:40'],
-              ['10:00', '10:45'],
-              ['10:55', '11:40'],
-              ['14:20', '15:05'],
-              ['15:15', '16:00'],
-              ['16:20', '17:05'],
-              ['17:15', '18:00']
-            ]
             wx.setStorageSync('session_id', res.data['session_id']);
-            wx.setStorageSync('classcount', 8);
-            wx.setStorageSync('classtotime', classtotime);
-            wx.setStorageSync('classtime', ['8:00-9:00', '9:00-10:00', '10:00-11:00', '11:00-12:00', '14:00-16:00', '16:00-18:00', '18:00-20:00', '20:00-21:00']);
             wx.request({
               url: 'https://tony-space.top/wxapi/getnowweek',
               dataType: 'json',

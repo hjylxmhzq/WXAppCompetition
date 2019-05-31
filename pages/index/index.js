@@ -60,7 +60,7 @@ Page({
           });
 
           let time = course['time'].split(';')[0].split('-');
-          course['time'] = [parseInt(time[0]), parseInt(time[1])];
+          course['time'] = [parseInt(time[0]), time.length > 1 ? parseInt(time[1]) : parseInt(time[0])];
           course['week'] = [...new Set(singleweek)];
           course['day'] = [...new Set(singleday)];
           return course;
@@ -133,7 +133,6 @@ Page({
       },
       success: function(res) {
         let data = res.data;
-        console.log(data);
         data = data instanceof Array ? data : [];
         data.sort(function(a, b) {
           a = +new Date(a['remind_date'] + ' ' + a['remind_time']);
